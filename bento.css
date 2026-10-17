@@ -1,0 +1,125 @@
+/* Concept 13: compact bento home. Project stories retain their approved layout. */
+.bento-home{--bg:#eef0ec;--paper:#fbfcfa;--ink:#191c22;--mute:#555962;--acc:#1f5a6b;--line:#d3d8d2;--max:1320px;--g:clamp(16px,2.5vw,32px)}
+.bento-home .top{background:var(--bg);border-bottom:0}
+.bento-home .top .wrap{height:64px}
+.bento-home .brand{font-size:18px}
+.bento-home .poster-opening{display:grid;grid-template-columns:190px minmax(0,1.3fr) minmax(270px,1fr);gap:14px;padding:12px 0 14px;align-items:stretch}
+.bento-home .poster-portrait{overflow:hidden;border-radius:20px;background:#fff;display:flex;align-items:center;align-self:center}
+.bento-home .poster-portrait img{width:100%;height:auto}
+.bento-home .poster-profile{background:#fbfcfa;border-radius:20px;padding:26px;display:flex;flex-direction:column}
+.bento-home .poster-profile>.eyebrow{font-size:12px;letter-spacing:.08em}
+.bento-home .poster-profile h1{font:400 clamp(34px,3.8vw,51px)/1.03 var(--serif);letter-spacing:-.03em;margin:12px 0 14px}
+.bento-home .poster-profile .line{font-size:15px;line-height:1.55;margin-bottom:10px}
+.bento-home .poster-profile .bio{font-size:14px;line-height:1.6;color:var(--body);margin-bottom:10px}
+.bento-home .poster-profile .actions{margin-top:auto;padding-top:8px;gap:8px;align-items:center}
+.bento-home .btn{border-radius:40px;font-size:13px;padding:9px 14px}
+.bento-home .profile-contact{font-size:13px;padding:8px}
+.bento-home .poster-prize{border-radius:20px;padding:28px;background:#182230;color:#fffaf0;display:flex;flex-direction:column;justify-content:center;border-top:3px solid #b99652}
+.bento-home .poster-prize .eyebrow{font-size:12px;letter-spacing:.08em;color:#ead9b2}
+.bento-home .poster-prize h2{font:400 29px/1.15 var(--serif);margin:20px 0 16px}
+.bento-home .poster-prize p{font-size:14px;line-height:1.7;color:#eee8dc}
+.bento-home .poster-prize a{font-size:14px;margin-top:22px;align-self:start;text-underline-offset:5px}
+.bento-recognition{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;scroll-margin-top:76px}
+.bento-recognition>div,.bento-recognition>a{background:#fbfcfa;border-radius:16px;padding:18px;text-decoration:none}
+.bento-recognition b{display:block;font:400 22px/1.2 var(--serif);margin-bottom:8px}
+.bento-recognition span{display:block;color:var(--mute);font-size:12px;line-height:1.5}
+.bento-recognition a:hover b{text-decoration:underline;text-underline-offset:4px}
+.bento-work{padding-top:28px;scroll-margin-top:64px}
+.bento-heading{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.bento-heading h2{font:400 29px/1.2 var(--serif);margin-right:8px}
+.bento-filters{display:flex;gap:7px;flex-wrap:wrap}
+.bento-filters button{border:1px solid #74716b;border-radius:30px;background:transparent;color:var(--ink);padding:9px 14px;min-height:44px;font:500 13px/1.3 var(--sans);cursor:pointer}
+.bento-filters button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:white}
+.bento-count{margin-left:auto;font-size:13px;color:var(--mute)}
+.bento-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.bento-home .bento-tile{grid-column:span 2;position:relative;min-width:0;display:flex;flex-direction:column;overflow:hidden;border:0;border-radius:18px;background:#161b20;color:white;text-decoration:none;isolation:isolate}
+.bento-home .bento-grid>.bento-tile:nth-child(-n+2){grid-column:span 3}
+.bento-home .bento-tile .preview-image{width:100%;min-width:0;height:auto;aspect-ratio:16/9;min-height:230px;margin:0;padding:0;border:0;position:relative;overflow:hidden;background:#222831}
+.bento-home .bento-tile .preview-image img{width:100%;height:100%;object-fit:cover;transform:none;transition:transform .25s}
+.bento-home .preview-image:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#0b1019 0%,#0b1019ed 12%,#0b101980 42%,transparent 80%);z-index:1;pointer-events:none}
+.bento-home .bento-copy{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:2}
+.bento-home .bento-copy .eyebrow{color:#fff;font-size:12px;letter-spacing:.08em;background:#111923d9;padding:4px 7px;display:inline-block;border-radius:4px}
+.bento-home .bento-copy h3{font:400 26px/1.13 var(--serif);margin:9px 0 0;color:#fff}
+.bento-home .bento-copy p{font-size:13px;line-height:1.5;color:#fff;margin-top:9px;max-width:60ch}
+.bento-home .bento-tile:hover img{transform:scale(1.025)}
+.bento-home .bento-tile:focus-visible{outline-offset:3px}
+.bento-credit{position:absolute;right:10px;top:10px;max-width:calc(100% - 20px);font-size:10px;line-height:1.4;color:white;background:#111923e8;border-radius:4px;padding:4px 7px}
+.bento-secondary{margin-top:24px}
+.bento-secondary>h2{font:400 23px/1.3 var(--serif);margin-bottom:14px}
+.bento-home .bento-secondary .bento-tile,.bento-home .bento-secondary .bento-grid>.bento-tile:nth-child(-n+2){grid-column:span 2}
+.bento-secondary .bento-copy p{display:none}
+.bento-secondary .bento-copy h3{font-size:23px}
+.bento-home .bento-secondary .preview-image{min-height:200px}
+.bento-home .bento-tile[hidden],.bento-secondary[hidden]{display:none}
+.bento-contact{margin-top:28px;padding:22px 0 10px;display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid var(--line);font-size:14px;scroll-margin-top:80px}
+.bento-home footer{padding:18px 0 24px;margin:0;border:0;font-size:12px;color:var(--mute)}
+@media(max-width:1050px){
+ .bento-home .poster-opening{grid-template-columns:160px minmax(0,1fr)}
+ .bento-home .poster-prize{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;column-gap:24px;padding:22px}
+ .bento-home .poster-prize .eyebrow,.bento-home .poster-prize h2{grid-column:1}.bento-home .poster-prize h2{margin:10px 0 0;font-size:26px}
+ .bento-home .poster-prize p{grid-column:2;grid-row:1/span 2}.bento-home .poster-prize a{grid-column:2;margin-top:12px}
+ .bento-recognition{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .bento-home .bento-tile,.bento-home .bento-secondary .bento-tile,.bento-home .bento-secondary .bento-grid>.bento-tile:nth-child(-n+2){grid-column:span 3}
+ .bento-home .bento-tile .preview-image{min-height:250px}
+}
+@media(max-width:620px){
+ .bento-home .poster-opening{grid-template-columns:82px minmax(0,1fr);gap:12px;padding-top:6px}
+ .bento-home .poster-portrait{border-radius:12px;align-self:start;background:none}
+ .bento-home .poster-profile{display:contents}
+ .bento-home .poster-profile>.eyebrow{grid-column:2;grid-row:1;font-size:10px;letter-spacing:.04em;padding-top:1px}
+ .bento-home .poster-profile h1{grid-column:2;grid-row:1;font-size:clamp(27px,7vw,39px);margin:24px 0 0;align-self:start}
+ .bento-home .poster-profile .line,.bento-home .poster-profile .bio,.bento-home .poster-profile .actions{grid-column:1/-1;margin:0}
+ .bento-home .poster-profile .line{font-size:16px;line-height:1.5}
+ .bento-home .poster-profile .bio{font-size:13px;line-height:1.55}
+ .bento-home .poster-profile .actions{padding-top:3px}
+ .bento-home .poster-prize{display:block;padding:21px;border-radius:16px;margin-top:5px}
+ .bento-home .poster-prize h2{font-size:25px;margin:12px 0}.bento-home .poster-prize p{font-size:13px}.bento-home .poster-prize a{display:inline-block;margin-top:14px}
+ .bento-recognition{gap:10px}.bento-recognition>div,.bento-recognition>a{padding:15px 12px;border-radius:12px}.bento-recognition b{font-size:19px}.bento-recognition span{font-size:11px}
+ .bento-heading{gap:12px}.bento-heading h2{width:100%;font-size:27px}.bento-filters{gap:6px}.bento-filters button{padding:9px 11px;font-size:12px}.bento-count{margin-left:0}
+ .bento-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+ .bento-home .bento-tile,.bento-home .bento-grid>.bento-tile:nth-child(-n+2),.bento-home .bento-secondary .bento-tile,.bento-home .bento-secondary .bento-grid>.bento-tile:nth-child(-n+2){grid-column:1}
+ .bento-home .bento-tile .preview-image{aspect-ratio:16/10;min-height:235px}
+ .bento-home .bento-copy{padding:18px}.bento-home .bento-copy h3{font-size:25px}.bento-home .bento-copy p{font-size:12px}
+ .bento-home .bento-secondary .preview-image{min-height:190px;aspect-ratio:16/9}
+ .bento-contact{font-size:13px;gap:16px}.bento-contact a:first-child{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.bento-home .bento-tile .preview-image img{transition:none}.bento-home .bento-tile:hover img{transform:none}}
+.bento-home .bento-result{background:#fbfcfa;color:var(--ink);padding:14px 20px 16px;flex:1;display:flex;flex-direction:column;gap:3px;border-top:3px solid var(--acc)}
+.bento-home .bento-result b{font:400 22px/1.2 var(--serif)}
+.bento-home .bento-result span{font-size:13px;line-height:1.5;color:var(--mute)}
+
+/* ---- small motion (home only; all of it is skipped when the visitor asks for reduced motion) ---- */
+.motion-curve{margin:2px 0 14px;max-width:480px}
+.motion-curve svg{display:block;width:100%;height:auto;overflow:visible}
+.motion-curve .cap{font-size:11px;line-height:1.4;color:var(--mute);margin-top:2px}
+@media (prefers-reduced-motion:no-preference){
+  .motion-curve .trace{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:mdraw 2.6s cubic-bezier(.3,.6,.3,1) .35s forwards}
+  .motion-curve .cmd{opacity:0;animation:mfade .5s ease .2s forwards}
+  @keyframes mdraw{to{stroke-dashoffset:0}}
+  @keyframes mfade{to{opacity:1}}
+  .js-motion .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .js-motion .rv.in{opacity:1;transform:none}
+  .bento-home .btn.solid{position:relative;overflow:hidden}
+  .bento-home .btn.solid::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,#ffffff55,transparent);transform:skewX(-20deg);animation:msheen 2.8s ease-in-out 1.2s 3}
+  @keyframes msheen{to{left:130%}}
+}
+
+/* ---- controls-themed motion (see controls.js; all decorative) ---- */
+.ctl-rel{position:relative;overflow:hidden}
+.ctl-rel>*:not(.ctl-bg){position:relative;z-index:1}
+.ctl-bg{position:absolute!important;inset:0;z-index:0!important;pointer-events:none}
+.ctl-dark{opacity:.95}
+.ctl-bg canvas{display:block;width:100%;height:100%}
+.bento-home .poster-portrait.ctl-col{flex-direction:column;align-items:stretch}
+.ctl-graph{width:100%;height:86px;margin-top:6px;padding:0 6px}
+.ctl-graph canvas{display:block;width:100%}
+.ctl-att{display:flex;justify-content:center;margin:6px 0 12px}
+.ctl-ring{position:fixed;inset:0;z-index:9000;pointer-events:none}
+@media(max-width:760px){.poster-portrait .ctl-graph,.poster-portrait .ctl-att,.ctl-ring{display:none}}
+.ctl-strip{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;background:#fff;border-radius:16px;padding:12px 14px;margin:10px 0}
+.ctl-strip .ctl-graph{flex:1;min-width:0;margin:0;padding:0;width:auto}
+.ctl-strip .ctl-att{margin:0}.ctl-strip .ctl-att svg{width:84px;height:84px}
+.ctl-cap{flex-basis:100%;margin:0;font-size:11px;color:#6b665c}
+@media(min-width:761px){.ctl-strip{display:none}}
+.poster-prize h2,.poster-prize p{text-shadow:0 0 10px #182230,0 0 4px #182230}
+@media(max-width:620px){.bento-home .poster-prize{padding-bottom:210px}.bento-home .poster-prize .ctl-bg{top:auto!important;height:190px}}

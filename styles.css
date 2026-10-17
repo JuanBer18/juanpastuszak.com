@@ -1,0 +1,578 @@
+/* Juan Pastuszak, engineering portfolio. Editorial project stories and a poster-based home.
+   Warm paper, Fraunces display serif, Inter text, one vermilion accent. Media keep their true proportions. */
+:root{
+  --bg:#eef0ec;--paper:#fbfcfa;--card:#fcfdfb;--ink:#1d1a16;--body:#36312a;--mute:#6b6357;--line:#d3d8d2;--acc:#1f5a6b;--acc-soft:#d6e6ea;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --g:clamp(16px,4vw,56px);--head:58px;--max:1240px
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+img,video{display:block;max-width:100%;height:auto}
+:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:8px 14px;z-index:20}.skip:focus{left:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--g)}
+.eyebrow{font:600 12px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* header */
+.top{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;height:var(--head)}
+.brand{font:500 19px var(--serif);text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.nav{display:flex;gap:22px;margin-left:auto;font-size:14.5px;align-items:center}
+.nav a{text-decoration:none;color:var(--mute);padding:6px 0}.nav a:hover,.nav a.on{color:var(--ink)}
+.nav a.on{box-shadow:inset 0 -2px 0 var(--acc)}
+.nav .pdf{color:var(--acc);font-weight:600}
+.menu{display:none;margin-left:auto}
+@media(max-width:760px){
+  .nav{display:none}
+  .menu{display:block;position:relative}
+  .menu summary{list-style:none;cursor:pointer;font-size:14.5px;font-weight:500;padding:8px 12px;border:1px solid var(--line);background:var(--paper)}
+  .menu summary::-webkit-details-marker{display:none}
+  .menu[open] summary{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .menu nav{position:absolute;right:0;top:calc(100% + 8px);background:var(--paper);border:1px solid var(--line);box-shadow:0 14px 34px -18px #0005;display:grid;min-width:230px;padding:6px}
+  .menu nav a{padding:11px 14px;text-decoration:none;font-size:15.5px;border-bottom:1px solid var(--line)}.menu nav a:last-child{border-bottom:0;color:var(--acc);font-weight:600}
+}
+
+/* opening */
+.open{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.75fr);gap:clamp(28px,6vw,96px);padding:clamp(32px,4vw,56px) 0 32px;align-items:start}
+.open h1{font:300 clamp(48px,7.5vw,104px)/.96 var(--serif);letter-spacing:-.035em;margin:14px 0 18px;font-variation-settings:'opsz' 144}
+.open .line{font:400 clamp(20px,2.2vw,27px)/1.32 var(--serif);font-style:italic;color:var(--body);max-width:32ch;margin-bottom:24px}
+.open p.bio{max-width:62ch;color:var(--body);margin-bottom:14px}
+.mobile-prize{display:none}
+.work-preview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0 0 36px}
+.work-preview a{text-decoration:none;border-top:1px solid var(--line);padding-top:14px}
+.preview-image{height:180px;display:flex;justify-content:center;align-items:center;background:var(--paper);margin-bottom:12px}
+.preview-image img{width:100%;height:100%;object-fit:contain}
+.work-preview h2{font:400 22px/1.2 var(--serif);margin-top:6px}
+.work-preview a:hover h2{color:var(--acc)}
+@media(max-width:560px){
+  .open{padding-top:28px;gap:20px;padding-bottom:24px}
+  .open h1{font-size:48px;margin-top:12px;margin-bottom:14px}
+  .open .line{font-size:21px;margin-bottom:16px}
+  .open p.bio{font-size:15px;line-height:1.5}
+  .open .actions{margin-top:18px;gap:8px}
+  .open .btn{padding:10px 13px;font-size:13px}
+  .open .side{display:none}
+  .open .mobile-prize{display:block;font-size:13px;line-height:1.4;color:var(--acc);max-width:45ch;margin:10px 0}
+  .work-preview{grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px}
+  .work-preview a:last-child{display:none}
+  .preview-image{height:126px;margin-bottom:9px}
+  .work-preview h2{font-size:19px}
+  .work-preview .eyebrow{font-size:10px}
+}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border:1px solid var(--ink);text-decoration:none;font-weight:500;font-size:15px;transition:background .2s,color .2s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--ink);color:var(--paper)}.btn.solid:hover{background:var(--acc);border-color:var(--acc)}
+.side figure img{width:min(250px,100%)}
+.prize{margin-top:28px;border-top:2px solid var(--acc);padding-top:16px}
+.prize .eyebrow{color:var(--acc)}
+.prize b{display:block;font:500 25px/1.18 var(--serif);margin:8px 0 8px;letter-spacing:-.01em}
+.prize p{font-size:15px;color:var(--body);max-width:34ch}
+@media(max-width:860px){
+  .open{grid-template-columns:1fr;gap:30px}
+  .side{display:grid;grid-template-columns:minmax(96px,128px) 1fr;gap:20px;align-items:start}
+  .side figure img{width:100%}
+  .prize{margin-top:0}
+}
+
+/* recognition */
+.rec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.rec div{padding:22px 22px 22px 0}.rec div+div{padding-left:22px;border-left:1px solid var(--line)}
+.rec .k{font:600 11.5px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.rec b{display:block;font:500 20px/1.25 var(--serif);margin:6px 0 4px}.rec span{font-size:14.5px;color:var(--mute)}
+@media(max-width:860px){.rec{grid-template-columns:1fr}.rec div,.rec div+div{padding:16px 0;border-left:0}.rec div+div{border-top:1px solid var(--line)}}
+
+/* section heads and project index */
+section.block{padding-top:clamp(56px,8vw,104px)}
+section[id],article[id]{scroll-margin-top:calc(var(--head) + 18px)}
+.shead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-bottom:1px solid var(--ink);padding-bottom:12px;margin-bottom:4px}
+.shead h2{font:400 clamp(28px,3.4vw,40px)/1.1 var(--serif);letter-spacing:-.02em}
+.idx .grp{padding:22px 0 6px;color:var(--acc)}
+.idx a{display:grid;grid-template-columns:52px minmax(0,1.05fr) minmax(0,.95fr) 150px;gap:20px;align-items:center;padding:17px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.idx a:hover h3{color:var(--acc)}
+.idx .n{font:400 22px var(--serif);color:var(--mute)}
+.idx h3{font:400 clamp(19px,2vw,23px)/1.25 var(--serif);transition:color .2s}
+.idx .m{font-size:14px;color:var(--mute);line-height:1.5}.idx .m b{display:block;color:var(--body);font-weight:500}
+.idx .s{font-size:13px;color:var(--mute);text-align:right;line-height:1.4}
+@media(max-width:860px){.idx a{grid-template-columns:40px minmax(0,1fr);gap:4px 14px}.idx .m,.idx .s{grid-column:2;text-align:left}}
+
+/* project chapters */
+.ch{padding-top:clamp(72px,10vw,132px)}
+.ch .num{font:300 clamp(60px,8vw,112px)/.8 var(--serif);color:var(--acc)}
+.ch h2{font:400 clamp(32px,4.8vw,60px)/1.05 var(--serif);letter-spacing:-.025em;max-width:21ch;margin:14px 0 20px}
+.ch .lead{font:400 clamp(18.5px,1.85vw,22px)/1.52 var(--serif);color:var(--body);max-width:58ch}
+.meta{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0 24px;margin:30px 0 0;border-top:1px solid var(--line)}
+.meta div{padding:12px 0;border-bottom:1px solid var(--line)}
+.meta dt{font:600 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}.meta dd{font-size:15px;margin-top:2px;line-height:1.45}
+@media(max-width:980px){.meta{grid-template-columns:1fr 1fr}}@media(max-width:520px){.meta{grid-template-columns:1fr}}
+.glance{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:24px;background:var(--paper);border:1px solid var(--line)}
+.glance div{padding:16px 18px}.glance div+div{border-left:1px solid var(--line)}
+.glance dt{font:600 11px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}.glance dd{font-size:14.5px;line-height:1.5;color:var(--body)}
+@media(max-width:980px){.glance{grid-template-columns:1fr 1fr}.glance div:nth-child(3){border-left:0}.glance div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media(max-width:560px){.glance{grid-template-columns:1fr}.glance div+div{border-left:0;border-top:1px solid var(--line)}}
+.story{margin-top:clamp(28px,4.5vw,56px)}
+.step{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,4vw,52px);padding:clamp(26px,3.2vw,40px) 0;border-top:1px solid var(--line);align-items:center}
+.step.alt{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr)}.step.alt>figure{order:2}
+.step.tall{grid-template-columns:minmax(0,.66fr) minmax(0,1fr)}.step.tall.alt{grid-template-columns:minmax(0,1fr) minmax(0,.66fr)}
+.step>figure{position:static}
+.step.tall>figure{width:100%;max-width:var(--portrait-width,300px);justify-self:center}
+.step.tall>figure img,.step.tall>figure video{width:100%;height:auto}
+.step.tall{align-items:center}
+.story-pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,52px);border-top:1px solid var(--line);padding:32px 0}
+.story-pair .step{display:flex;flex-direction:column;border:0;padding:0;gap:18px;align-items:stretch;min-width:0}
+.story-pair .step>figure{order:0;margin:0 auto;max-width:100%}
+.story-pair .step>figure img,.story-pair .step>figure video{width:auto;height:auto;max-width:100%;max-height:320px;margin:auto}
+.story-pair .step>figure figcaption{max-width:55ch}
+@media(max-width:700px){.story-pair{grid-template-columns:1fr;gap:30px}.story-pair .step+ .step{border-top:1px solid var(--line);padding-top:28px}}
+.step h3{font:500 clamp(22px,2.3vw,29px)/1.18 var(--serif);letter-spacing:-.015em;margin-bottom:14px}
+.step p{color:var(--body);margin-bottom:12px;max-width:62ch}
+@media(max-width:860px){.step,.step.alt,.step.tall,.step.tall.alt{grid-template-columns:1fr;gap:18px}.step.alt>figure{order:0}.step>figure{position:static}.step.tall>figure{max-width:min(300px,80%)}.step.tall .t{width:100%}}
+
+/* figures */
+figure.m figcaption{font:italic 400 14px/1.45 var(--serif);color:var(--mute);margin-top:10px}
+figure.m .credit{display:block;font:400 12px var(--sans);font-style:normal;color:var(--mute);margin-top:2px}
+figure.m img,figure.m video{width:100%;background:#e7dfd0}
+figure.m.contain .plate{background:#fff;border:1px solid var(--line);padding:clamp(8px,1.4vw,16px)}
+figure.m.contain img{background:transparent}
+.step>figure.m.contain .plate{display:flex;justify-content:center}
+.fig2{margin-top:22px}
+.tap{display:none}
+@media(prefers-reduced-motion:reduce){.tap{display:inline}}
+video{cursor:pointer}
+
+/* functional loop and automation flow */
+.loop{display:flex;flex-wrap:wrap;gap:6px 0;margin:18px 0 6px;padding:0;list-style:none;font-size:13.5px}
+.loop li{display:flex;align-items:center;color:var(--body)}
+.loop li span{background:var(--paper);border:1px solid var(--line);padding:5px 10px}
+.loop li+li::before{content:'→';color:var(--acc);padding:0 7px}
+.loop-note{font-size:13px;color:var(--mute)}
+.flow{list-style:none;padding:clamp(16px,2.4vw,28px);background:#fff;border:1px solid var(--line);counter-reset:f;display:grid;gap:0}
+.flow li{counter-increment:f;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:center;font-size:15.5px;padding:10px 0;position:relative}
+.flow li::before{content:counter(f);width:30px;height:30px;border-radius:50%;border:1px solid var(--acc);color:var(--acc);display:grid;place-items:center;font:500 14px var(--serif)}
+.flow li+li::after{content:'';position:absolute;left:15px;top:-10px;height:20px;border-left:1px solid var(--line)}
+.flow li:last-child{color:var(--acc);font-weight:500}
+
+/* comparison slider */
+.cmp{position:relative;overflow:hidden;--pos:50%;width:100%;touch-action:pan-y;user-select:none;background:#222}
+.cmp img{position:absolute;inset:0;width:100%;height:100%}
+.cmp .top{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.cmp .bar{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:#fff;transform:translateX(-1px);box-shadow:0 0 0 1px #0003}
+.cmp .knob{position:absolute;left:var(--pos);top:50%;width:44px;height:44px;border-radius:50%;background:#fff;color:#111;transform:translate(-50%,-50%);display:grid;place-items:center;box-shadow:0 4px 16px #0006;font-size:15px}
+.cmp .lab{position:absolute;top:10px;color:#fff;background:#000a;padding:3px 10px;font:500 12px var(--sans)}.cmp .lab.a{left:10px}.cmp .lab.b{right:10px}
+.cmp input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.cmp:focus-within{outline:3px solid var(--acc);outline-offset:3px}
+
+/* technical notes */
+details.more{margin-top:8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+details.more summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;padding:18px 0;font:500 19px var(--serif)}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:'+';font:300 28px var(--serif);color:var(--acc);line-height:1}
+details.more[open] summary::after{content:'−'}
+details.more .in{padding:4px 0 30px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:clamp(20px,4vw,56px);align-items:start}
+details.more .in p{color:var(--body);margin-bottom:12px;font-size:16px;max-width:60ch}
+details.more .figs{display:grid;gap:22px}
+@media(max-width:860px){details.more .in{grid-template-columns:1fr}}
+
+/* shorter projects */
+.minor .num{font-size:clamp(44px,5vw,64px)}
+.minor h2{font-size:clamp(28px,3.6vw,44px)}
+
+/* education, other experience, contact */
+.edu{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:clamp(24px,5vw,72px);margin-top:18px;align-items:start}
+.entry{display:grid;grid-template-columns:110px minmax(0,1fr);gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.entry .w{font:400 15px var(--serif);color:var(--mute);padding-top:3px}
+.entry h3{font:500 21px/1.25 var(--serif)}.entry .where{color:var(--body);font-size:15.5px;margin:2px 0 6px}.entry p{font-size:15px;color:var(--mute);max-width:64ch}
+@media(max-width:860px){.edu{grid-template-columns:1fr}.edu figure{max-width:340px}}
+@media(max-width:520px){.entry{grid-template-columns:1fr;gap:2px}}
+.contact{padding:clamp(72px,10vw,130px) 0 30px}
+.contact h2{font:300 clamp(48px,8vw,100px)/.95 var(--serif);letter-spacing:-.03em}
+.contact p{max-width:58ch;color:var(--body);margin-top:16px}
+.contact .mail{display:inline-block;margin-top:22px;font:400 clamp(22px,3vw,34px) var(--serif);word-break:break-word}
+footer{border-top:1px solid var(--line);padding:24px 0 calc(40px + env(safe-area-inset-bottom));color:var(--mute);font-size:14px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+@media print{.top,.menu,.actions,video{display:none}}
+
+/* comparison slider: explicit stacking so the handle, divider and labels sit above both photographs */
+figure.m .cmp img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:contain;background:none;z-index:0}
+figure.m .cmp img.top{z-index:1}
+.cmp .bar,.cmp .knob,.cmp .lab{z-index:2}
+.cmp input{z-index:3}
+
+/* Project navigation stays close while reading the longer case studies. */
+.project-nav{position:sticky;top:var(--head);z-index:8;margin:20px 0 0;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:10px 0}
+.project-nav .links{display:flex;gap:5px;overflow-x:auto;min-width:0;scrollbar-width:thin;padding:4px 2px 7px}
+.project-nav a{white-space:nowrap;text-decoration:none;font-size:12px;padding:7px 10px;border:1px solid transparent;color:var(--mute)}
+.project-nav a:hover{color:var(--ink);border-color:var(--line)}
+.project-nav a[aria-current]{color:var(--acc);border-color:var(--acc);background:var(--paper)}
+.project-nav .n{font-family:var(--serif);padding-right:5px}
+.project-nav button{flex:none;font:500 12px var(--sans);border:0;background:none;color:var(--mute);padding:10px;cursor:pointer}
+.project-nav button:hover{color:var(--acc)}
+.ch{scroll-margin-top:calc(var(--head) + 82px)}
+.chapter-end{display:flex;justify-content:space-between;gap:16px;margin-top:25px;padding-top:16px;border-top:1px solid var(--line);font-size:14px}
+.chapter-end a{text-decoration:none;color:var(--acc)}
+.chapter-end a:last-child{text-align:right}
+@media(max-width:760px){.brand{font-size:clamp(14px,4vw,19px)}.top .wrap{gap:10px}.project-nav{gap:4px;margin-left:calc(-1 * var(--g));margin-right:calc(-1 * var(--g));padding:6px var(--g)}.project-nav a{font-size:12px;padding:7px}.project-nav button{font-size:11px;padding:7px 0 7px 8px;max-width:65px;line-height:1.3}.ch{scroll-margin-top:calc(var(--head) + 72px)}}
+
+/* Uncropped overviews remain readable; full images are one click away. */
+.image-open{position:relative;display:block;width:100%;padding:0;border:0;background:none;color:inherit;cursor:zoom-in;text-align:left}
+.image-open .zoom-label{position:absolute;right:8px;bottom:8px;padding:5px 9px;background:#fbf8f2eb;color:var(--ink);border:1px solid #dcd2c0;font:500 11px/1.3 var(--sans);opacity:0;transition:opacity .15s}
+.image-open:hover .zoom-label,.image-open:focus-visible .zoom-label{opacity:1}
+@media(hover:none){.image-open .zoom-label{opacity:1}}
+dialog.image-viewer{border:1px solid var(--line);background:var(--paper);color:var(--ink);max-width:min(1240px,96vw);max-height:96dvh;width:max-content;margin:auto;padding:18px}
+dialog.image-viewer::backdrop{background:#16130eee}
+.image-viewer .viewer-head{display:flex;justify-content:space-between;align-items:center;gap:30px;margin-bottom:12px;font-size:13px}
+.image-viewer .close{background:var(--ink);color:var(--paper);border:0;padding:9px 15px;font:500 14px var(--sans);cursor:pointer}
+.image-viewer img{width:auto;height:auto;max-width:100%;max-height:76dvh;object-fit:contain;margin:auto}
+.image-viewer figcaption{max-width:85ch;font-size:14px;line-height:1.45;margin:12px 0 0}
+body.image-viewer-open{overflow:hidden}
+@media(prefers-reduced-motion:reduce){.image-open .zoom-label{transition:none}}
+@media print{.project-nav,.chapter-end,.zoom-label,.image-viewer{display:none!important}}
+
+/* Each project has its own document. */
+.project-back{padding-top:28px;font-size:14px}
+.project-back a{color:var(--acc);text-decoration:none}
+.project-page .ch{padding-top:38px}
+.project-page .ch h1{font:400 clamp(30px,4.5vw,60px)/1.1 var(--serif);max-width:1000px;margin-bottom:20px}
+
+/* Complete image-led project selection, visible on every screen size. */
+.project-cards{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 40px)/3);gap:20px;overflow-x:auto;scroll-snap-type:x proximity;padding:0 0 18px;scrollbar-width:thin;scrollbar-color:var(--acc) var(--line)}
+.project-card{display:flex;flex-direction:column;text-decoration:none;scroll-snap-align:start;border:1px solid var(--line);background:var(--paper);min-width:0}
+.project-card .preview-image{height:210px;background:var(--bg);padding:12px;margin:0;border-bottom:1px solid var(--line)}
+.project-card .preview-image img{width:100%;height:100%;object-fit:contain}
+.card-copy{padding:18px;display:flex;flex-direction:column;flex:1}
+.card-copy h3{font:400 24px/1.25 var(--serif);margin:9px 0 12px}
+.card-copy p{font-size:14px;line-height:1.5;color:var(--body);margin-bottom:12px}
+.card-status{font-size:12px;color:var(--mute);margin-top:auto}
+.card-link{font-size:14px;font-weight:600;color:var(--acc);margin-top:16px}
+.project-card:hover h3{color:var(--acc)}
+.rail-hint{font-size:13px;color:var(--mute);margin:0 0 18px}
+.other-projects{padding-top:42px}
+.other-projects .shead h2{font-size:30px}
+.project-cards.secondary{grid-auto-columns:calc((100% - 20px)/2)}
+.secondary .preview-image{height:160px}
+.secondary h3{font-size:22px}
+.award-feature{background:var(--acc-soft);border-left:5px solid var(--acc);padding:clamp(22px,4vw,42px);margin-bottom:22px}
+.award-feature h3{font:500 clamp(30px,4vw,46px)/1.14 var(--serif);max-width:25ch;margin:12px 0 16px}
+.award-feature p{max-width:65ch;font-size:18px}
+.awards .rec{display:grid;grid-template-columns:1fr 1fr;gap:22px;background:none;padding:0;border:0}
+.awards .rec>div{padding:22px;border:1px solid var(--line);background:var(--paper)}
+.prize{background:var(--acc-soft);padding:20px;border-top:3px solid var(--acc)}
+@media(max-width:860px){.project-cards{grid-auto-columns:46%}.project-card .preview-image{height:180px}}
+@media(max-width:560px){.project-cards{grid-auto-columns:84%;gap:14px}.project-cards.secondary{grid-auto-columns:76%}.project-card .preview-image{height:190px}.secondary .preview-image{height:145px}.awards .rec{grid-template-columns:1fr}.open .mobile-prize{background:var(--acc-soft);border-left:3px solid var(--acc);padding:14px;font-size:15px}.card-copy h3{font-size:23px}}
+
+/* Juan authorised cropped landscape thumbnails; project evidence keeps its original shape. */
+.project-card .preview-image{padding:0;position:relative;overflow:hidden}
+.project-card .preview-image img{object-fit:cover;object-position:center;width:100%;height:100%}
+.project-card[href="payload.html"] .preview-image img{object-position:center 42%}
+.thumbnail-credit{position:absolute;bottom:0;right:0;background:#1d1a16d9;color:white;font:400 9px/1.4 var(--sans);padding:3px 5px}
+.rocket-record{margin-top:24px;padding:28px;border:1px solid var(--line);background:var(--paper)}
+.rocket-record h3{font:400 28px/1.2 var(--serif);margin:10px 0 22px}
+.record-stats{display:flex;gap:48px;margin-bottom:20px}
+.record-stats b{display:block;font:500 40px/1.2 var(--serif);color:var(--acc)}
+.record-stats span{font-size:13px;color:var(--mute);line-height:1.5}
+.rocket-record p{font-size:14px;max-width:70ch;margin-bottom:14px}
+.rocket-record a{font-size:14px;color:var(--acc)}
+@media(max-width:560px){.record-stats{gap:20px}.record-stats b{font-size:32px}.record-stats>div{flex:1}.rocket-record{padding:20px}}
+
+.award-link{display:inline-block;color:var(--acc);font-size:14px;font-weight:500;margin-top:14px}
+#spaceapps{scroll-margin-top:90px}
+
+.rail-hint{display:none}
+
+/* A partial next card makes horizontal browsing visible without taking over page scroll. */
+.project-cards{grid-auto-columns:calc((100% - 50px)/2.65);padding-right:24px}
+.rail-hint{display:block}
+@media(max-width:860px){.project-cards{grid-auto-columns:58%}}
+@media(max-width:560px){.project-cards{grid-auto-columns:74%;gap:14px}.project-cards.secondary{grid-auto-columns:74%}}
+
+/* Taller project cards with a visible next card. */
+.project-cards{grid-auto-columns:calc((100% - 50px)/3.25)}
+.project-card .preview-image{height:235px}
+.project-card[href="composites.html"] .preview-image img{object-position:90% center}
+@media(max-width:860px){.project-cards{grid-auto-columns:48%}}
+@media(max-width:560px){.project-cards{grid-auto-columns:72%}.project-card .preview-image{height:215px}}
+
+/* Recognition descriptions and links occupy distinct rows. */
+.awards .rec>div{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.awards .rec>div>span{display:block;line-height:1.55}
+.awards .rec>div>b{margin:8px 0 12px}
+.awards .rec>div>.award-link{display:block;margin-top:auto;padding-top:18px;line-height:1.45}
+.award-feature .award-link{display:block;margin-top:18px}
+/* Approved project layout A: media and contribution, 14 October 2026. */
+.project-page .project-case{padding-top:34px}
+.project-opening{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.project-context{font-size:12px;line-height:1.5;color:var(--mute);margin-bottom:14px}
+.project-page .project-opening h1{font:400 clamp(30px,3.8vw,48px)/1.13 var(--serif);margin:0 0 22px;max-width:25ch;letter-spacing:-.025em}
+.project-case .lead{font:400 19px/1.55 var(--serif);max-width:58ch}
+.project-contribution{border-left:3px solid var(--acc);padding-left:18px;margin:25px 0 20px}
+.project-contribution h3{font:600 12px/1.4 var(--sans);color:var(--acc);margin-bottom:10px}
+.project-contribution p{font-size:15px;line-height:1.65;color:var(--body)}
+.project-outcome{font-size:13px;line-height:1.5;color:var(--acc);margin-top:16px}
+.project-hero{min-width:0}
+.project-hero figure.m img,.project-hero figure.m video{max-height:500px;object-fit:contain;width:auto;max-width:100%;margin:auto;background:transparent}
+.project-hero .image-open{width:100%}
+.section-index{display:flex;flex-wrap:wrap;gap:10px 22px;padding:18px 0;border-block:1px solid var(--line);margin-top:36px;font-size:12px;line-height:1.55}
+.section-index>span{font-weight:600;color:var(--mute);width:100%}
+.section-index a{color:var(--body);text-decoration:none}.section-index a:hover{color:var(--acc);text-decoration:underline}
+.project-case .story{margin-top:0}
+.project-case .step,.project-case .step.tall{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(28px,5vw,64px);align-items:start;padding:44px 0;border-bottom:1px solid var(--line);scroll-margin-top:140px}
+.project-case .step>.t{order:0;min-width:0;width:auto}
+.project-case .step>figure,.project-case .step.alt>figure,.project-case .step.tall>figure{order:1;position:static;max-width:100%;width:100%;justify-self:stretch}
+.project-case .step.tall>figure img,.project-case .step.tall>figure video{max-height:460px;width:auto;max-width:100%;object-fit:contain;margin:auto}
+.project-case .step .t h3{font:400 clamp(24px,2.5vw,31px)/1.2 var(--serif);margin-bottom:18px}
+.project-case .step .t p{font-size:16px;line-height:1.7;max-width:62ch}
+.project-case .step .fig2{margin-top:24px}
+.project-tools{padding:26px 0;margin-top:12px}
+.project-tools h3{font:600 12px var(--sans);color:var(--mute);margin-bottom:10px}
+.project-tools p{font-size:14px;line-height:1.6;max-width:75ch}
+@media(max-width:860px){.project-opening{grid-template-columns:1fr;gap:28px}.project-hero figure.m img,.project-hero figure.m video{max-height:430px}.project-case .step,.project-case .step.tall{grid-template-columns:1fr;gap:24px;padding:32px 0}.project-case .step>figure{order:1}.project-case .step>.t{order:0}.project-case .step.tall>figure img,.project-case .step.tall>figure video{max-height:420px}.project-case .lead{font-size:19px}.section-index{gap:8px 18px;margin-top:28px}}
+@media(max-width:560px){.project-page .project-opening h1{font-size:34px}.project-context{font-size:11.5px}.project-contribution p{font-size:15px}.project-hero figure.m img,.project-hero figure.m video{max-height:360px}.project-case .step .t p{font-size:15.5px}}
+
+/* Alternating desktop evidence, sized to the accompanying text. */
+@media(min-width:861px){
+ .project-case .step,.project-case .step.tall{align-items:center;padding:30px 0}
+ .project-case .step.alt>.t{order:1}
+ .project-case .step.alt>figure{order:0}
+ .project-case .step>figure,.project-case .step.tall>figure{width:min(100%,var(--media-width,100%));max-width:100%;justify-self:center}
+ .project-case .step>figure img,.project-case .step>figure video{width:100%;height:auto;max-height:none;object-fit:contain;margin:auto}
+ .project-case .step>figure .plate{width:100%;padding:10px}
+ .project-case .step>.t p:last-child{margin-bottom:0}
+}
+@media(max-width:860px){
+ .project-case .step,.project-case .step.tall{gap:18px;padding:26px 0}
+ .project-case .step.alt>.t{order:0}
+ .project-case .step.alt>figure{order:1}
+ .project-case .step.tall>figure{max-width:320px;justify-self:center}
+}
+@media(min-width:861px){.project-case .step.alt>figure,.project-case .step.tall.alt>figure{width:min(100%,var(--media-width,100%));max-width:100%;justify-self:center}}
+
+/* Fixed thumbnail dimensions, independent of viewport width. */
+.project-cards,.project-cards.secondary{grid-auto-columns:300px}
+.project-card .preview-image,.secondary .preview-image{height:235px;flex:none}
+.project-card[href="composites.html"] .preview-image img{object-position:center center}
+.project-hero{width:440px;max-width:100%;justify-self:center}
+/* Keep companion CAD and original evidence together beside the project copy. */
+.project-case .step>.evidence-stack{order:1;min-width:0;display:grid;gap:22px;align-self:center}
+.project-case .step.alt>.evidence-stack{order:0}
+.project-case .evidence-stack figure.m{width:100%;max-width:100%;margin:0}
+.project-case .evidence-stack figure.m img,.project-case .evidence-stack figure.m video{display:block;width:100%;height:auto;max-height:340px;object-fit:contain;margin:auto}
+.project-case .evidence-stack figure.m.contain img{max-height:280px}
+.project-case .evidence-stack .plate{background:white}
+@media(max-width:860px){.project-case .step>.evidence-stack,.project-case .step.alt>.evidence-stack{order:1}.project-case .evidence-stack figure.m img,.project-case .evidence-stack figure.m video{max-height:380px}}
+
+/* Let the team reflection flow beneath its photograph. */
+.project-case .step.wrap-media{display:block}
+.project-case .wrap-media>.t{display:flow-root}
+.project-case .wrap-media .t p{max-width:none}
+.project-case .wrap-media figure.m{float:right;width:48%;margin:0 0 20px 32px}
+.project-case .wrap-media figure.m img{width:100%;height:auto;max-height:none}
+@media(max-width:650px){.project-case .wrap-media figure.m{float:none;width:100%;margin:0 0 24px}}
+
+.project-case .evidence-stack figure.m img[src$="sat_stack_labelled.svg"]{background:#fff}
+
+.project-introduction,.project-hero{min-width:0}
+@media(max-width:860px){.project-opening{grid-template-columns:minmax(0,1fr)}}
+/* Compact companion evidence for the shorter CubeSat narrative. */
+#satellite .evidence-stack{gap:16px}
+#satellite .evidence-stack figure.m img,#satellite .evidence-stack figure.m video{max-height:280px}
+#satellite .evidence-stack figure.m.contain img{max-height:210px}
+
+/* A small design inset leaves the assembled hardware as the main evidence. */
+#satellite .wheel-overview{align-items:start}
+#satellite .wheel-overview>.t{order:0;min-width:0;display:flow-root}
+#satellite .wheel-overview>figure{order:1;width:100%;--media-width:100%}
+#satellite .wheel-overview>figure img{width:100%;max-height:650px;object-fit:contain;background:white}
+#satellite .wheel-overview .wheel-inset{width:190px;max-width:44%;float:right;margin:0 0 16px 20px}
+#satellite .wheel-inset .plate{padding:4px;border:0}
+#satellite .wheel-inset img{height:auto;width:100%;max-height:135px;object-fit:contain}
+#satellite .wheel-inset figcaption{font-size:12px}
+@media(max-width:860px){#satellite .wheel-overview>figure{max-width:520px;justify-self:center}#satellite .wheel-overview>figure img{max-height:none}}
+/* Project prose and evidence captions. */
+
+figure.m figcaption{text-align:center}
+
+
+/* Separate the small wheel model from the prose and prioritise the hardware photo. */
+#satellite .wheel-stack>.evidence-stack{align-self:start;justify-items:center;width:100%}
+#satellite .wheel-stack .evidence-stack>figure:first-child{width:220px;max-width:65%}
+#satellite .wheel-stack .evidence-stack>figure:first-child .plate{padding:4px;border:0}
+#satellite .wheel-stack .evidence-stack>figure:first-child img{max-height:135px}
+#satellite .wheel-stack .evidence-stack>figure:last-child{width:100%}
+#satellite .wheel-stack .evidence-stack>figure:last-child img{max-height:none;width:100%}
+#satellite .wheel-stack .evidence-stack>figure:first-child figcaption{font-size:12px}
+
+/* A steady two-column reflection, with the team photograph aligned to the copy. */
+#satellite .reflection-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:start;gap:40px}
+#satellite .reflection-layout>.t{order:0}
+#satellite .reflection-layout>figure{order:1;width:100%;align-self:start;margin-top:56px}
+#satellite .reflection-layout>figure img{width:100%;height:auto;max-height:none}
+@media(max-width:860px){#satellite .reflection-layout{grid-template-columns:minmax(0,1fr);gap:20px}#satellite .reflection-layout>figure{margin-top:0;width:100%;max-width:540px;justify-self:center}}
+
+#satellite .reflection-closing{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:center}
+#satellite .reflection-closing>figure{width:230px;max-width:100%;justify-self:center;margin:0}
+#satellite .reflection-closing>figure img{width:100%;height:auto;max-height:240px;object-fit:contain}
+@media(max-width:860px){#satellite .reflection-closing{grid-template-columns:minmax(0,1fr);gap:20px}}
+#satellite .reflection-layout>.t{grid-column:1;grid-row:1}
+#satellite .reflection-layout>figure{grid-column:2;grid-row:1}
+#satellite .reflection-layout>.reflection-closing{grid-row:2;order:2}
+#satellite .reflection-closing>figure img{background:transparent}
+@media(max-width:860px){#satellite .reflection-layout>figure{grid-column:1;grid-row:2}#satellite .reflection-layout>.reflection-closing{grid-row:3}}
+/* Consistent evidence alignment and spacing across project pages. */
+.project-case figure.m{min-width:0}
+.project-case figure.m img,.project-case figure.m video{display:block;margin-inline:auto;max-width:100%;object-fit:contain}
+.project-case figure.m figcaption{margin:12px auto 0;text-align:center;max-width:62ch}
+.project-case .step>.evidence-stack{gap:24px;justify-items:center}
+.project-case .evidence-stack figure.m img,.project-case .evidence-stack figure.m video{width:auto;max-width:100%;background:transparent}
+.project-case .evidence-stack figure.m .plate img{width:100%}
+#satellite .wheel-stack>.evidence-stack{gap:24px;align-self:center}
+#satellite .wheel-stack .evidence-stack>figure:last-child img{width:100%}
+#satellite .reflection-layout{row-gap:32px;align-items:center}
+#satellite .reflection-layout>figure{margin:0;align-self:center;justify-self:center}
+#satellite .reflection-closing{gap:40px;align-items:center}
+#satellite .reflection-closing>figure{width:180px;justify-self:center}
+#satellite .reflection-closing>figure img{width:100%;height:auto;max-height:none;background:transparent}
+@media(max-width:860px){.project-case .step>.evidence-stack{gap:20px}#satellite .reflection-layout{row-gap:24px}#satellite .reflection-closing{gap:20px}}
+/* Keep the closing reflection continuous rather than spacing text around image height. */
+#satellite .reflection-layout{row-gap:20px}
+#satellite .reflection-closing{align-items:start}
+#satellite .reflection-closing>.t{align-self:start}
+#satellite .reflection-closing>.t p{margin-top:0}
+#satellite .reflection-closing>figure{width:150px;align-self:start}
+@media(max-width:860px){#satellite .reflection-layout{row-gap:20px}}
+/* Centre each reflection image against its own text, with a compact trophy crop. */
+@media(min-width:861px){
+ #satellite .reflection-layout{align-items:center}
+ #satellite .reflection-layout>figure{align-self:center;margin:0;max-width:440px}
+ #satellite .reflection-closing{align-items:center}
+ #satellite .reflection-closing>.t,#satellite .reflection-closing>figure{align-self:center}
+}
+#satellite .reflection-closing>figure{width:250px;max-width:100%}
+#satellite .reflection-closing>figure .image-open{display:block;width:100%;height:200px;overflow:hidden;position:relative}
+#satellite .reflection-closing>figure .image-open img{position:absolute;width:280px;max-width:none;height:auto;left:50%;top:-135px;transform:translateX(-50%)}
+#satellite .reflection-closing>figure figcaption{max-width:250px}
+/* Keep the annotated assembly secondary to the project narrative. */
+#satellite .wheel-stack .evidence-stack>figure:last-child{width:380px;max-width:100%;justify-self:center}
+#satellite .wheel-stack .evidence-stack>figure:last-child img{width:100%;height:auto}
+#satellite .wheel-stack>.evidence-stack{grid-template-columns:minmax(0,1fr);min-width:0}
+#satellite .wheel-stack .evidence-stack>figure:last-child{width:min(380px,100%);min-width:0}
+
+/* Report figures stay complete in project cards, including axes and annotations. */
+.project-card[href="composites.html"] .preview-image,.project-card[href="f16.html"] .preview-image{background:#fff;padding:10px}
+.project-card[href="composites.html"] .preview-image img,.project-card[href="f16.html"] .preview-image img{object-fit:contain;width:100%;height:100%}
+
+.project-card[href="composites.html"] .preview-image{padding:0;background:var(--paper)}
+.project-card[href="composites.html"] .preview-image img{object-fit:cover;object-position:center}
+
+/* Isolate comparison images from global header and evidence sizing rules. */
+.project-case .step figure.m .cmp{isolation:isolate;background:transparent;position:relative}
+.project-case .step figure.m .cmp img{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:none;max-height:none;margin:0;object-fit:contain;transform:none;background:none;z-index:0}
+.project-case .step figure.m .cmp img.cmp-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0);z-index:1}
+.project-case .step.full-media{display:block}
+.project-case .full-media>.t{max-width:85ch;margin-bottom:24px}
+.project-case .step.full-media>figure{width:min(100%,960px);max-width:100%;margin-inline:auto}
+.project-case .full-media .cmp .lab{top:12px}
+
+.project-subtitle{font-size:16px;line-height:1.5;color:var(--mute);margin:14px 0 22px;max-width:60ch}
+.project-case .step .t p.section-subtitle{font-size:14px;line-height:1.5;color:var(--mute);margin:-7px 0 20px;max-width:60ch}
+/* Individual homepage cover framing, preserving the subjects and original files. */
+.project-card[href="satellite.html"] .preview-image img{object-position:15% center}
+.project-card[href="f16.html"] .preview-image img{width:95%;height:100%;object-fit:contain;transform:translateX(-6px)}
+.project-card[href="composites.html"] .preview-image img{object-fit:contain;object-position:center;transform:none}
+.project-card[href="avdasi2.html"] .preview-image img{object-position:64% 70%}
+.project-card[href="stinson.html"] .preview-image img{object-fit:contain;object-position:center;transform:none}
+.project-card[href="uas.html"] .preview-image img{object-fit:cover;object-position:center 53%}
+/* Uniform fixed landscape covers; crop thumbnails only, preserving original evidence. */
+.project-card .preview-image,.project-cards.secondary .preview-image{height:168px;padding:0;background:#fff}
+.project-card .preview-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transform:none}
+.project-card[href="satellite.html"] .preview-image img{object-fit:cover;object-position:15% bottom}
+.project-card[href="f16.html"] .preview-image img{width:100%;height:100%;object-fit:cover;object-position:center;transform:none}
+.project-card[href="composites.html"] .preview-image img{object-fit:cover;object-position:center}
+.project-card[href="avdasi2.html"] .preview-image img{object-fit:cover;object-position:64% bottom}
+.project-card[href="stinson.html"] .preview-image img{object-fit:cover;object-position:center}
+/* Natural evidence proportions: constrain both axes without oversized image boxes. */
+.project-hero figure.m .image-open,.project-case figure.m .image-open{display:flex;justify-content:center;align-items:center;max-width:100%}
+.project-hero figure.m img,.project-case .step figure.m img{width:auto;height:auto;max-width:100%;object-fit:contain;margin-inline:auto}
+.project-case .step figure.m .plate{box-sizing:border-box;max-width:100%}
+.project-case .step>.evidence-stack{align-self:center;gap:20px}
+.project-case .evidence-stack figure.m{justify-self:center}
+.project-case .evidence-stack figure.m img{width:auto;height:auto;max-width:100%;max-height:340px}
+.project-case .evidence-stack figure.m.contain img{width:auto;max-height:300px}
+.project-case .step figure.m figcaption{padding-inline:4px;text-align:center}
+/* Portrait evidence stays substantial on phones while landscape diagrams use available width. */
+@media(max-width:860px){
+ .project-case .step>figure,.project-case .step.tall>figure{width:100%;max-width:100%;justify-self:center}
+ .project-case .step figure.m img,.project-case .evidence-stack figure.m img{width:auto;height:auto;max-width:100%;max-height:460px}
+ .project-case .evidence-stack figure.m.contain img{max-height:380px}
+ .project-case .step>.evidence-stack{width:100%;gap:22px}
+}
+/* Comparison overlays deliberately share one exact canvas. */
+.project-case .step figure.m .cmp img{position:absolute;width:100%;height:100%;max-width:none;max-height:none;margin:0}
+/* Keep the intentionally cropped trophy independent of natural-size evidence. */
+#satellite .reflection-closing>figure .image-open{display:block}
+#satellite .reflection-closing>figure .image-open img{position:absolute;width:280px;max-width:none;height:auto;left:50%;top:-135px;transform:translateX(-50%)}
+.project-hero figure.m video,.project-case .step figure.m video{display:block;width:auto;height:auto;max-width:100%;object-fit:contain;margin-inline:auto}
+/* Clear vector drag affordance and tighter closing evidence. */
+.cmp .knob svg{display:block;width:24px;height:24px;overflow:visible;color:#26221c}
+#satellite .reflection-layout{row-gap:10px}
+#satellite .reflection-closing{gap:28px}
+#satellite .reflection-closing>figure{width:280px}
+#satellite .reflection-closing>figure .image-open{height:225px}
+#satellite .reflection-closing>figure .image-open img{width:315px;top:-152px}
+#satellite .evidence-stack img[src$="sat-sensor-bench-closeup.svg"]{width:auto;max-width:100%;max-height:340px}
+#payload .evidence-stack img[src$="payload-structure-cad.png"]{width:auto;max-height:420px}
+/* Pair the two tall payload views rather than building a very tall evidence column. */
+@media(min-width:861px){
+ #payload .evidence-stack:has(img[src$="payload-structure-cad.png"]){grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:18px}
+ #payload .evidence-stack:has(img[src$="payload-structure-cad.png"]) figure.m img{max-height:360px}
+ #payload .evidence-stack:has(img[src$="payload-structure-cad.png"]) .plate{padding:6px}
+ #satellite .reflection-layout>figure{align-self:end}
+}
+/* Browsing controls are visible, keyboard accessible and aligned outside the cards. */
+:root{--mute:#575047}
+.eyebrow,.project-context,.card-status,.rec .k{font-size:13px}
+.rail-controls{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:0 0 12px;color:var(--body);font-size:14px}
+.rail-controls>div{display:flex;gap:8px}
+.rail-controls button{display:grid;place-items:center;min-width:44px;min-height:44px;border:1px solid var(--mute);background:var(--paper);color:var(--ink);border-radius:50%;cursor:pointer}
+.rail-controls button[data-direction="-1"] svg{transform:rotate(180deg)}
+.rail-controls button:disabled{opacity:.4;cursor:default}
+.project-cards{scroll-snap-type:x mandatory;scroll-padding-inline:0}
+.project-picker{display:none}
+.project-case .step .t p+p{margin-top:20px}
+.project-contribution p,.project-introduction .lead{margin-bottom:20px}
+.project-results{margin:26px 0 32px;padding:22px 0;border-block:1px solid var(--line)}
+.project-results h3{font:500 21px/1.3 var(--serif);margin-bottom:16px}
+.project-results dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.project-results dt{font-size:13px;color:var(--mute);margin-bottom:7px}
+.project-results dd{margin:0}
+.project-results strong{display:block;font:500 23px/1.25 var(--serif);margin-bottom:8px}
+.project-results dd span{display:block;font-size:14px;line-height:1.55;color:var(--body)}
+@media(max-width:760px){
+ .project-nav{justify-content:space-between;gap:12px;overflow:visible}
+ .project-nav>.links{display:none}
+ .project-picker{display:block;position:relative;min-width:0;max-width:calc(100% - 110px);font-size:14px}
+ .project-picker summary{padding:10px 14px;border:1px solid var(--mute);background:var(--paper);cursor:pointer}
+ .project-picker>div{position:absolute;top:calc(100% + 6px);left:0;min-width:220px;max-width:calc(100vw - 40px);background:var(--paper);border:1px solid var(--line);box-shadow:0 8px 24px #0002;display:grid;padding:6px;z-index:20}
+ .project-picker a{padding:9px 12px;white-space:normal;font-size:14px}
+ .project-results dl{grid-template-columns:1fr;gap:22px}
+ .project-results strong{font-size:22px}
+}
+@media(min-width:761px) and (max-width:1000px){.project-nav>.links{display:none}.project-picker{display:block;position:relative;font-size:14px}.project-picker summary{padding:10px 14px;border:1px solid var(--mute);background:var(--paper);cursor:pointer}.project-picker>div{position:absolute;top:calc(100% + 6px);left:0;min-width:220px;background:var(--paper);border:1px solid var(--line);display:grid;padding:6px;z-index:20}.project-picker a{padding:9px 12px}.project-nav{justify-content:space-between;overflow:visible}}
+
+/* Copy without a second opening photograph spans the row without an empty column. */
+.project-case .step.text-only{display:block}.project-case .step.text-only>.t{max-width:74ch}.project-case .step.text-only .t p{max-width:none}
+
+/* Team photographs should be large enough to recognise the people and setting. */
+.project-case figure.m:has(img:is([src$="sat_ground.jpg"],[src$="av_group.jpg"],[src$="rocket_team_rail.jpg"],[src$="uas-team-national-final.svg"])){width:100%;max-width:100%;justify-self:center}
+.project-case .step figure.m img:is([src$="sat_ground.jpg"],[src$="av_group.jpg"],[src$="rocket_team_rail.jpg"],[src$="uas-team-national-final.svg"]){width:100%;height:auto;max-height:none}
+#satellite .reflection-layout>figure{width:100%;max-width:none}
+#satellite .reflection-layout>figure img[src$="sat_trophy.jpg"]{width:100%;height:auto;max-height:none}
+@media(min-width:861px){
+ .project-case .step:has(>figure img:is([src$="sat_ground.jpg"],[src$="av_group.jpg"],[src$="rocket_team_rail.jpg"],[src$="uas-team-national-final.svg"])){grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+ .project-case .step.alt:has(>figure img:is([src$="sat_ground.jpg"],[src$="av_group.jpg"],[src$="rocket_team_rail.jpg"],[src$="uas-team-national-final.svg"])){grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+ #satellite .reflection-layout{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:32px}
+ #satellite .reflection-closing{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);column-gap:32px}
+}

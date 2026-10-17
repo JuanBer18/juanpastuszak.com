@@ -1,0 +1,166 @@
+/* Project presentation, matching the selected bento homepage.
+   Layout only: project copy, evidence order, natural proportions and fitted
+   media sizing remain controlled by the canonical content and existing rules. */
+.project-document{--bg:#eef0ec;--paper:#fbfcfa;--card:#fbfcfa;--ink:#191c22;--body:#353942;--mute:#555962;--acc:#1f5a6b;--line:#d3d8d2;--max:1320px;--g:clamp(16px,2.5vw,32px);--head:64px}
+.project-document .top{background:var(--bg);border-bottom:0}
+.project-document .brand{font-size:18px}
+.project-document .top .wrap{height:64px}
+.project-document .project-back{padding:10px 0 14px;margin:0;font-size:14px}
+.project-document .project-back a{display:inline-flex;align-items:center;min-height:40px;padding:8px 16px;background:white;border:1px solid var(--line);border-radius:30px;text-decoration:none}
+.project-document .project-back a:hover{background:#e5e8e9}
+.project-document .project-nav{top:64px;background:#eef0ecf5;backdrop-filter:blur(12px);padding:10px 0 14px;margin:0;border:0;gap:14px;z-index:9;max-width:100%}
+.project-document .project-nav .links{gap:6px;align-items:center;min-width:0}
+.project-document .project-nav .links a{padding:9px 12px;min-height:42px;font-size:13px;background:white;border:1px solid var(--line);border-radius:28px;color:var(--ink);text-decoration:none;white-space:nowrap}
+.project-document .project-nav .links a:hover{background:#e6e8ea}
+.project-document .project-nav .links a[aria-current=page]{background:#182230;border-color:#182230;color:white;box-shadow:none}
+.project-document [data-motion]{border:1px solid #797a7b;border-radius:26px;background:transparent;color:var(--ink);font-size:12px;min-height:42px;max-width:none;padding:8px 13px;white-space:nowrap}
+.project-document .project-case{padding-top:6px;border-top:0}
+.project-document .project-opening{gap:14px;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:stretch}
+.project-document .project-introduction{background:white;border-radius:20px;padding:clamp(23px,3vw,38px);min-width:0}
+.project-document .project-context{font-size:12px;line-height:1.65;color:var(--mute);margin-bottom:18px}
+.project-document .project-opening h1{font-size:clamp(31px,3.3vw,45px);line-height:1.12;max-width:26ch;margin-bottom:20px}
+.project-document .project-subtitle{font-size:15px;color:var(--mute)}
+.project-document .lead{font-family:var(--sans);font-size:16px;line-height:1.75;max-width:62ch}
+.project-document .project-contribution{border:0;background:#f1f3f4;border-radius:12px;padding:18px;margin:22px 0 18px}
+.project-document .project-contribution h3{font-size:12px;letter-spacing:.06em;color:#424b58;margin-bottom:10px}
+.project-document .project-contribution p{font-size:14px;line-height:1.7;margin:0}
+.project-document .project-outcome{display:inline-block;border:1px solid #c5d2c7;background:#edf3ed;border-radius:10px;padding:8px 12px;font-size:12px;line-height:1.5;color:#26462f;margin-top:0}
+.project-document .project-hero{background:white;border-radius:20px;padding:24px;width:100%;max-width:100%;display:flex;align-items:center;justify-content:center;min-width:0;justify-self:stretch}
+.project-document .project-hero figure{margin:0;width:100%;min-width:0}
+.project-document .project-hero figure.m img,.project-document .project-hero figure.m video{max-height:480px;height:auto;max-width:100%;object-fit:contain}
+.project-document figure.m figcaption{text-align:center;font-size:13px;line-height:1.6;color:var(--mute);margin-top:12px}
+.project-document figure.m .plate{background:white;border:1px solid #e0e3e6;border-radius:10px}
+.project-document .image-open{border-radius:10px}
+.project-document .image-open .zoom-label{border-radius:6px;font-size:11px}
+.project-document .project-results{border:0;margin:16px 0;padding:22px;background:white;border-radius:18px}
+.project-document .project-results h3{font-size:22px;margin-bottom:18px}
+.project-document .project-results dl{gap:12px}
+.project-document .project-results dl>div{padding:18px;background:#eff2f4;border-radius:12px}
+.project-document .project-results dt{font-size:12px;color:#444e59}
+.project-document .project-results strong{font-size:24px;color:#182230}
+.project-document .project-results dd span{font-size:13px;line-height:1.65}
+.project-document .story{display:grid;gap:14px;margin-top:16px}
+.project-document .project-case .step,.project-document .project-case .step.tall{background:white;border-radius:20px;border:0;padding:clamp(22px,3vw,36px);gap:clamp(24px,4vw,46px);margin:0;min-width:0;scroll-margin-top:148px}
+.project-document .project-case .step .t h3{font-size:clamp(25px,2.3vw,31px);line-height:1.2;margin-bottom:18px;color:var(--ink)}
+.project-document .project-case .step .t p{font-size:15px;line-height:1.8;max-width:65ch;color:var(--body);text-align:left}
+.project-document .project-case .step .t p+p{margin-top:18px}
+.project-document .project-case .step .t p.section-subtitle{font-size:13px;line-height:1.6;color:var(--mute)}
+.project-document .project-case .step.text-only>.t{max-width:78ch}
+.project-document .project-case .step.text-only .t p{max-width:none}
+.project-document .project-case .evidence-stack{gap:20px}
+.project-document .project-tools{background:#182230;color:white;border-radius:18px;padding:24px 28px;margin-top:16px}
+.project-document .project-tools h3{font-size:12px;letter-spacing:.07em;color:#e2d4b5;margin-bottom:12px}
+.project-document .project-tools p{font-size:14px;line-height:1.8;max-width:90ch;color:#f1f2f4}
+.project-document .more{background:white;border:0;border-radius:18px;margin-top:16px;overflow:hidden}
+.project-document .more>summary{padding:22px 26px;font-size:16px;color:var(--ink);min-height:58px;cursor:pointer}
+.project-document .more .in{padding:4px 26px 26px;gap:26px}
+.project-document .more .in p{font-size:14px;line-height:1.8}
+.project-document .chapter-end{display:flex;gap:14px;padding:0;margin:20px 0;border:0;justify-content:space-between}
+.project-document .chapter-end a{background:white;border:1px solid var(--line);border-radius:14px;padding:16px 22px;font-size:14px;text-decoration:none;min-height:52px;display:flex;align-items:center}
+.project-document .chapter-end a:last-child{background:#182230;color:white;border-color:#182230}
+.project-document .chapter-end a:hover{box-shadow:0 3px 12px #18223014;text-decoration:underline}
+.project-document footer{font-size:12px;border-top:1px solid var(--line);margin-top:26px;padding:22px 0 28px;color:var(--mute)}
+.project-document .cmp{border-radius:10px;overflow:hidden}
+.project-document .cmp .lab{background:#182230ed;color:white;border-radius:6px;padding:5px 9px;font-size:12px}
+.project-document .project-picker summary{border-radius:24px;border-color:#b8b8b5;background:white;min-height:44px}
+.project-document .project-picker>div{border-radius:14px;background:white;padding:8px;box-shadow:0 8px 24px #18223022}
+.project-document .project-picker a{border-radius:8px;min-height:42px}
+.project-document .project-picker a[aria-current=page]{background:#182230;color:white}
+.project-document .image-viewer{border-radius:18px;background:white;border:1px solid var(--line)}
+.project-document .image-viewer .viewer-head button,.project-document .image-viewer .viewer-head a{border-radius:24px}
+.project-document .more .figs{min-width:0}
+@media(max-width:1100px) and (min-width:1001px){.project-document .project-nav .links a{padding:9px;font-size:12px}.project-document .project-nav{gap:8px}.project-document [data-motion]{padding:8px 10px;font-size:11px}}
+@media(max-width:860px){
+ .project-document .project-opening{grid-template-columns:minmax(0,1fr);gap:14px}
+ .project-document .project-hero{padding:22px}
+ .project-document .project-hero figure.m img,.project-document .project-hero figure.m video{max-height:420px}
+ .project-document .project-case .step,.project-document .project-case .step.tall{gap:22px;padding:24px;grid-template-columns:minmax(0,1fr)}
+ .project-document .project-results dl{grid-template-columns:1fr;gap:10px}
+ .project-document .more .in{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:560px){
+ .project-document .project-back{padding:0 0 4px}
+ .project-document .project-nav{padding:8px 0 12px}
+ .project-document .project-introduction{padding:24px 20px;border-radius:16px}
+ .project-document .project-opening h1{font-size:32px}
+ .project-document .project-context{font-size:12px;margin-bottom:14px}
+ .project-document .lead{font-size:15px;line-height:1.75}
+ .project-document .project-contribution{padding:15px}
+ .project-document .project-hero{padding:18px;border-radius:16px}
+ .project-document .project-hero figure.m img,.project-document .project-hero figure.m video{max-height:360px}
+ .project-document .project-case .step,.project-document .project-case .step.tall{padding:24px 20px;border-radius:16px;gap:20px}
+ .project-document .project-case .step .t p{font-size:14px;line-height:1.8}
+ .project-document .project-case .step .t h3{font-size:26px}
+ .project-document figure.m figcaption{font-size:12px;line-height:1.55}
+ .project-document .project-results{padding:20px}.project-document .project-results dl>div{padding:16px}
+ .project-document .project-tools{padding:22px}.project-document .project-tools p{font-size:13px}
+ .project-document .chapter-end{gap:10px}.project-document .chapter-end a{padding:14px;font-size:13px;max-width:65%}
+ .project-document .more>summary{padding:20px}.project-document .more .in{padding:0 20px 20px}
+}
+@media(prefers-reduced-motion:reduce){.project-document .project-nav{backdrop-filter:none}}
+
+/* Requested evidence refinement: clean white plates and compact visual pairs. */
+.project-document figure.m .plate{background:#fff;border:0;border-radius:0;padding:0!important}
+.project-document .image-open{background:#fff}
+.project-document .project-case .step.award-closing{background:transparent;padding:0;gap:14px;align-items:stretch;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.project-document .award-closing>.t{background:white;border-radius:20px;padding:28px;align-self:start}
+.project-document .award-evidence{background:white;border-radius:20px;padding:24px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px;align-content:center;min-width:0}
+.project-document .award-evidence figure{margin:0;width:100%;max-width:100%}
+.project-document .award-evidence figure.m img{width:100%;height:auto;max-height:none}
+.project-document .award-evidence .trophy-detail{width:240px;max-width:100%;justify-self:center}
+.project-document .award-evidence .trophy-detail .image-open{display:block;width:100%;height:185px;position:relative;overflow:hidden}
+.project-document .award-evidence .trophy-detail .image-open img{position:absolute;width:270px;max-width:none;height:auto;left:50%;top:-130px;transform:translateX(-50%)}
+.project-document .project-case .step.board-iterations{display:block}
+.board-iterations>.t{max-width:85ch;margin-bottom:22px}
+.board-pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+.project-document .board-pair figure.m{margin:0;width:100%;max-width:100%}
+.project-document .board-pair figure.m img{max-height:300px;width:auto;height:auto;margin:auto}
+.project-document #payload .step:has(img[src$="pcb_hand.jpg"]){grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.project-document #payload .step:has(img[src$="pcb_hand.jpg"])>figure{width:100%;--media-width:100%}
+.project-document #payload .step:has(img[src$="pcb_hand.jpg"]) img{max-height:430px;width:auto}
+.project-document .step.full-media>figure:has(video){width:100%;max-width:100%}
+.project-document .step.full-media>figure video{width:auto;height:auto;max-height:520px;max-width:100%;margin:auto}
+.project-document .step.full-media>.t{max-width:85ch}
+.project-document #payload .step:has(img[src$="flight_altitude.png"])>figure,.project-document #payload .step:has(img[src$="flight_particulates.png"])>figure{width:100%}
+.project-document .project-case .step.launch-sequence{padding:0;background:transparent;gap:14px;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+.launch-sequence>div{background:white;border-radius:20px;padding:28px;min-width:0;display:flex;flex-direction:column}
+.launch-sequence .t{margin-bottom:22px}
+.project-document .launch-sequence figure.m{width:100%;max-width:100%;margin:auto 0 0}
+.project-document .launch-sequence figure.m video{max-height:480px;width:auto;max-width:100%;height:auto;margin:auto}
+.project-document #composites .step:has(video[src$="abaqus_forming.mp4"])>figure{width:100%;max-width:100%}
+.project-document #composites .step:has(video[src$="abaqus_forming.mp4"]) video{width:100%;height:auto;max-height:none}
+.project-document .award-closing .presentation-evidence{width:100%;margin:24px auto 0;max-width:100%}
+.project-document .award-closing .presentation-evidence img{width:auto;height:auto;max-width:100%;max-height:240px;margin:auto}
+.project-document .project-results dl:has(>div:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:760px){.project-document .project-results dl:has(>div:nth-child(2):last-child){grid-template-columns:1fr}}
+.project-document .project-results dl:has(>div:nth-child(4):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:760px){.project-document .project-results dl:has(>div:nth-child(4):last-child){grid-template-columns:1fr}}
+.project-document .project-case .step.evidence-gallery{display:block}
+.project-document .evidence-gallery>.t{max-width:96ch;margin-bottom:24px}
+.project-document .project-case .evidence-gallery>.t p{max-width:none}
+.project-document .paired-evidence{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.project-document .paired-evidence figure.m{width:100%;max-width:100%;margin:0;align-self:start}
+.project-document .paired-evidence figure.m img{width:100%;height:auto;max-height:none;margin:0}
+@media(max-width:760px){.project-document .paired-evidence{grid-template-columns:minmax(0,1fr);gap:22px}}
+.project-document .payload-structure>.t .integrated-payload{max-width:230px;margin:22px auto 0}
+.project-document .payload-structure>.t .integrated-payload img{max-height:240px;width:auto;height:auto}
+.project-document #payload .payload-structure>figure{width:100%;max-width:100%;--media-width:100%}
+.project-document #payload .payload-structure>figure img{width:100%;height:auto;max-height:none}
+@media(max-width:860px){
+ .project-document .project-case .step.award-closing{grid-template-columns:minmax(0,1fr)}
+ .project-document .award-closing>.t,.project-document .award-evidence{padding:22px;border-radius:16px}
+ .project-document #payload .step:has(img[src$="pcb_hand.jpg"]){grid-template-columns:minmax(0,1fr)}
+ .board-pair{gap:16px}
+ .project-document .board-pair figure.m img{max-height:240px}
+ .project-document .step.full-media>figure video{max-height:470px}
+ .project-document .project-case .step.launch-sequence{grid-template-columns:minmax(0,1fr)}
+ .launch-sequence>div{padding:22px;border-radius:16px}
+}
+
+/* ---- About page ---- */
+.project-document .about-card{max-width:760px;margin:36px auto 56px;background:#fbfcfa;border-radius:20px;padding:36px 38px}
+.project-document .about-card h1{font:400 clamp(32px,4.4vw,48px)/1.1 var(--serif);letter-spacing:-.02em;margin:8px 0 22px}
+.project-document .about-card p{font-size:17px;line-height:1.7;color:var(--body);margin-bottom:16px}
+.project-document .about-card p.small{font-size:15px;color:var(--mute)}
+.project-document .about-card .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:26px 0 8px}
+.project-document .about-card footer{display:flex;justify-content:space-between;margin-top:30px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--mute)}
