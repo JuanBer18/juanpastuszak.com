@@ -140,7 +140,7 @@ figure.m.contain img{background:transparent}
 .step>figure.m.contain .plate{display:flex;justify-content:center}
 .fig2{margin-top:22px}
 .tap{display:none}
-@media(prefers-reduced-motion:reduce){.tap{display:inline}}
+
 video{cursor:pointer}
 
 /* functional loop and automation flow */

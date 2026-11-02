@@ -2,7 +2,7 @@
    Everything is skipped when the visitor asks for reduced motion. */
 (function () {
   if (!document.body.classList.contains('bento-home')) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = false; /* Juan's choice (2 Nov 2026): motion runs by default */
   var $ = function (s) { return document.querySelector(s); };
   var all = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
 

@@ -5,7 +5,6 @@
    Everything is decorative (aria-hidden), skipped for reduced motion, and the cursor-driven pieces are skipped on touch screens and phones. */
 (function () {
   if (!document.body.classList.contains('bento-home')) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var ACC = getComputedStyle(document.documentElement).getPropertyValue('--acc').trim() || '#1f5a6b';
   var INK = '#1d1a16';
   var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;

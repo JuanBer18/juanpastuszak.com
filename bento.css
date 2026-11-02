@@ -92,7 +92,7 @@
 .motion-curve{margin:2px 0 14px;max-width:480px}
 .motion-curve svg{display:block;width:100%;height:auto;overflow:visible}
 .motion-curve .cap{font-size:11px;line-height:1.4;color:var(--mute);margin-top:2px}
-@media (prefers-reduced-motion:no-preference){
+@media all{
   .motion-curve .trace{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:mdraw 2.6s cubic-bezier(.3,.6,.3,1) .35s forwards}
   .motion-curve .cmd{opacity:0;animation:mfade .5s ease .2s forwards}
   @keyframes mdraw{to{stroke-dashoffset:0}}

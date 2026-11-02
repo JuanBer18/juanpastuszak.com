@@ -1,6 +1,7 @@
 /* The content, links and natural image proportions work without JavaScript. */
 (() => {
-  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  // Juan's choice (2 Nov 2026): videos play by default; visitors can still pause them with the button.
+  const motion = {matches: false, addEventListener() {}};
   const videos = [...document.querySelectorAll('video')];
   const visible = new Set(), pausedByReader = new Set();
   let motionPaused = motion.matches;
