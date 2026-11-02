@@ -152,9 +152,7 @@
   }
 
   rootLocus();
-  var fig = $('.poster-portrait');
-  if (fig && wide()) { fig.classList.add('ctl-col'); graph(fig); attitude(fig); }
-  if (fine && wide()) ring();
-  if (!wide()) strip();
+  /* Juan, 2 Nov 2026: the cursor ring, command/response graph, attitude indicator and phone strip are switched off
+     for a more serious page; only the root locus runs. The functions above are kept in case he wants them back. */
   requestAnimationFrame(engine);
 })();
