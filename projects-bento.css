@@ -164,3 +164,6 @@
 .project-document .about-card p.small{font-size:15px;color:var(--mute)}
 .project-document .about-card .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:26px 0 8px}
 .project-document .about-card footer{display:flex;justify-content:space-between;margin-top:30px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--mute)}
+
+.project-document .project-code{margin-top:10px;font-size:14px}
+.project-document .project-code a{color:var(--acc);text-underline-offset:3px}

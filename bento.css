@@ -123,3 +123,6 @@
 @media(min-width:761px){.ctl-strip{display:none}}
 .poster-prize h2,.poster-prize p{text-shadow:0 0 10px #182230,0 0 4px #182230}
 @media(max-width:620px){.bento-home .poster-prize{padding-bottom:210px}.bento-home .poster-prize .ctl-bg{top:auto!important;height:190px}}
+/* 2 Nov 2026: six featured projects sit in two even rows; five recognitions, scholarship first */
+@media(min-width:1051px){.bento-home .bento-work>.bento-grid>.bento-tile,.bento-home .bento-work>.bento-grid>.bento-tile:nth-child(-n+2){grid-column:span 2}.bento-recognition{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:1050px){.bento-recognition>h2+a{grid-column:1/-1}}
