@@ -1,0 +1,90 @@
+/* Recognition cards share the selected palette and keep decoration behind readable text. */
+.bento-home .opening-awards{display:grid;gap:14px;min-width:0;scroll-margin-top:76px}
+.bento-home .award-card,.bento-home .award-minor{position:relative;isolation:isolate;overflow:hidden;background:var(--award-bg);color:var(--award-text);border-top:3px solid var(--award-accent)}
+.bento-home .award-card{display:flex;flex-direction:column;justify-content:center;min-width:0;border-radius:20px;padding:23px 24px}
+.bento-home .award-card>*:not(canvas),.bento-home .award-minor>*:not(canvas){position:relative;z-index:1}
+.bento-home [data-award-scene]{display:block;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.bento-home .award-royal{--award-bg:#102a43;--award-text:#ffffff;--award-accent:#e9c77d;--award-secondary:#acd5f1;--award-motion:#9fd9e6}
+.bento-home .award-scholarship{--award-bg:#16181a;--award-text:#ffffff;--award-accent:#ed1a3b;--award-secondary:#bfbb24;--award-motion:#d0d6dc}
+.bento-home .award-honours{--award-bg:#f7f3eb;--award-text:#2c2524;--award-accent:#b01c2e;--award-secondary:#8c8065;--award-motion:#b7aa8f}
+.bento-home .award-satellite{--award-bg:#1b1d23;--award-text:#f5f6fa;--award-accent:#ced6e8;--award-secondary:#aabbd5;--award-motion:#a7c2dd}
+.bento-home .award-nasa{--award-bg:#14204b;--award-text:#ffffff;--award-accent:#e4002b;--award-secondary:#a7c7ff;--award-motion:#7099e3}
+.bento-home .award-card .eyebrow{font-size:11px;line-height:1.4;letter-spacing:.065em;color:var(--award-secondary)}
+.bento-home .award-card h2{font:400 27px/1.15 var(--serif);letter-spacing:-.02em;margin:12px 0;text-shadow:none}
+.bento-home .award-card p{font-size:13px;line-height:1.65;color:var(--award-text);opacity:.9;margin:0;text-shadow:none}
+.bento-home .award-card a{color:var(--award-text);font-size:13px;line-height:1.5;margin-top:16px;align-self:start;text-decoration:underline;text-decoration-color:var(--award-accent);text-underline-offset:5px;padding:3px 0}
+.bento-home .award-word{color:var(--award-accent)}
+.bento-home .award-secondary{color:var(--award-secondary)}
+.bento-home .award-scholarship h2 .award-word{background:transparent;padding:0}
+.bento-home .bento-recognition{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:0}
+.bento-home .bento-recognition .recognition-motion{grid-column:1/-1;background:transparent;padding:0;border:0;border-radius:0;text-align:right}
+.bento-home .recognition-motion button{font:400 11px/1.5 var(--sans);color:var(--mute);background:transparent;border:0;padding:0 0 2px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.bento-home .recognition-motion button[hidden]{display:none}
+.bento-home .bento-recognition .award-minor{padding:20px 20px 18px;border-radius:16px;min-width:0;text-decoration:none;display:block;border-top-width:2px}
+.bento-home .bento-recognition .award-minor h3{font:400 22px/1.18 var(--serif);letter-spacing:-.015em;margin:0 0 10px}
+.bento-home .bento-recognition .award-minor p{font-size:12px;line-height:1.65;margin:0;color:var(--award-text);opacity:.9}
+.bento-home .bento-recognition .award-word,.bento-home .bento-recognition .award-secondary{display:inline;font-size:inherit;line-height:inherit}
+.bento-home .bento-recognition .award-word{color:var(--award-accent)}
+.bento-home .bento-recognition .award-secondary{color:var(--award-secondary)}
+.bento-home .bento-recognition a:hover h3{text-decoration:underline;text-underline-offset:4px}
+.bento-home .bento-recognition>h2+a{grid-column:auto}
+@media(max-width:1050px){
+ .bento-home .opening-awards{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .bento-home .opening-awards .poster-prize{display:flex;grid-column:auto}
+ .bento-home .opening-awards .poster-prize>*{grid-column:auto;grid-row:auto}
+}
+@media(max-width:620px){
+ .bento-home .opening-awards{grid-template-columns:minmax(0,1fr);margin-top:5px}
+ .bento-home .opening-awards .award-card{padding:22px;border-radius:16px;margin-top:0}
+ .bento-home .opening-awards .award-card h2{font-size:25px;margin:12px 0}
+ .bento-home .opening-awards .poster-prize{padding-bottom:22px}
+ .bento-home .bento-recognition{grid-template-columns:minmax(0,1fr);gap:12px}
+ .bento-home .bento-recognition .award-minor{padding:20px 22px;min-height:150px}
+ .bento-home .recognition-motion button{min-height:36px}
+}
+
+/* Selected award layout */
+.bento-home .opening-awards{grid-template-rows:1.16fr 1fr}
+.bento-home .award-royal h2{font-size:30px}
+.bento-home .award-royal h2{color:var(--award-secondary)}
+.bento-home .award-scholarship h2{font-size:26px}
+.bento-home.brand-led .award-scholarship h2 .award-secondary{color:var(--award-text)}
+.bento-home .award-nasa p .award-word{color:var(--award-text);text-decoration:underline;text-decoration-color:var(--award-accent);text-underline-offset:3px}
+.bento-home.portrait-integrated .poster-opening{grid-template-columns:minmax(0,1fr) minmax(320px,430px)}
+.bento-home.portrait-integrated .poster-profile{position:relative;display:flex}
+.bento-home.portrait-integrated .poster-profile .poster-portrait{position:absolute;right:26px;top:26px;width:104px;display:block;margin:0;border-radius:13px;background:transparent;align-self:auto}
+.bento-home.portrait-integrated .poster-profile .poster-portrait img{display:block;width:100%;height:auto}
+.bento-home.portrait-integrated .poster-profile>.eyebrow,.bento-home.portrait-integrated .poster-profile h1{max-width:calc(100% - 128px)}
+.bento-home.portrait-integrated .identity-header{display:grid;grid-template-columns:minmax(0,1fr) 104px;column-gap:22px;row-gap:10px;align-items:start;margin-bottom:14px}
+.bento-home.portrait-integrated .identity-header>.eyebrow{grid-column:1;grid-row:1;max-width:none}
+.bento-home.portrait-integrated .identity-header>h1{grid-column:1;grid-row:2;max-width:none;margin:0;align-self:start}
+.bento-home.portrait-integrated .identity-header>.poster-portrait{position:static;grid-column:2;grid-row:1/3;justify-self:end}
+@media(max-width:1050px){
+ .bento-home .opening-awards{grid-template-columns:1.12fr 1fr;grid-template-rows:1fr}
+ .bento-home.portrait-integrated .poster-opening{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:620px){
+ .bento-home .opening-awards{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto}
+ .bento-home .opening-awards .award-royal{padding:26px 22px}
+ .bento-home .opening-awards .award-royal h2{font-size:28px}
+ .bento-home .opening-awards .award-scholarship h2{font-size:24px}
+ .bento-home.portrait-integrated .poster-profile{padding:24px 22px;border-radius:18px}
+ .bento-home.portrait-integrated .poster-profile .poster-portrait{width:76px;right:22px;top:24px;border-radius:10px}
+ .bento-home.portrait-integrated .poster-profile>.eyebrow{max-width:calc(100% - 94px);font-size:10px;letter-spacing:.04em;padding:0}
+ .bento-home.portrait-integrated .poster-profile h1{max-width:calc(100% - 94px);font-size:30px;margin:12px 0 14px;align-self:auto}
+ .bento-home.portrait-integrated .poster-profile .line,.bento-home.portrait-integrated .poster-profile .bio{margin:0 0 10px}
+ .bento-home.portrait-integrated .poster-profile .line{font-size:15px}
+ .bento-home.portrait-integrated .poster-profile .actions{padding-top:6px}
+ .bento-home.portrait-integrated .identity-header{grid-template-columns:minmax(0,1fr) 76px;column-gap:16px;row-gap:8px}
+ .bento-home.portrait-integrated .identity-header>h1{max-width:none;margin:0;grid-column:1;grid-row:2}
+}
+
+/* Chosen circular portrait, with a continuous neutral background. */
+.bento-home.portrait-integrated:not([data-portrait-option]) .identity-header{grid-template-columns:minmax(0,1fr) 128px;align-items:center}
+.bento-home.portrait-integrated:not([data-portrait-option]) .identity-header>.poster-portrait{width:128px;height:128px;border-radius:50%;overflow:hidden;background:#f6f6f6;border:0;align-self:center;display:grid;place-items:center}
+.bento-home.portrait-integrated:not([data-portrait-option]) .poster-portrait img{width:auto;height:128px;max-width:none;object-fit:contain;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
+@media(max-width:620px){
+ .bento-home.portrait-integrated:not([data-portrait-option]) .identity-header{grid-template-columns:minmax(0,1fr) 90px}
+ .bento-home.portrait-integrated:not([data-portrait-option]) .identity-header>.poster-portrait{width:90px;height:90px}
+ .bento-home.portrait-integrated:not([data-portrait-option]) .poster-portrait img{height:90px}
+}
