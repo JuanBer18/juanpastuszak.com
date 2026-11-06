@@ -1,0 +1,34 @@
+/* A short personal introduction in one reading column, within the portfolio's existing visual language. */
+.project-document .about-page{max-width:960px;padding-top:32px;padding-bottom:32px}
+.project-document .about-page .about-card{max-width:none;margin:0;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,4.5vw,56px)}
+
+/* Opening: eyebrow, name and lead beside the portrait. */
+.about-page .about-intro{display:grid;grid-template-columns:minmax(0,1fr) 124px;align-items:start;gap:clamp(24px,4vw,40px);margin-bottom:28px}
+.project-document .about-page .eyebrow{font-size:12px;letter-spacing:.12em;margin-bottom:0}
+.project-document .about-page h1{font:400 clamp(36px,5vw,52px)/1.08 var(--serif);letter-spacing:-.025em;margin:10px 0 18px}
+.project-document .about-page .about-lead{font-size:21px;line-height:1.5;color:var(--ink);margin:0}
+.about-page .about-portrait{width:124px;height:auto;border-radius:14px}
+
+/* Plain paragraphs. */
+.about-page .about-text{max-width:70ch}
+.project-document .about-page .about-text p{font-size:17px;line-height:1.75;margin:0 0 18px;color:var(--body);max-width:none}
+.about-page .about-text a{color:var(--acc)}
+
+.project-document .about-page .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;border-top:1px solid var(--line);padding-top:24px;margin:24px 0 0}
+.about-page .about-footer{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;padding:22px 2px 0;color:var(--mute);font-size:13px}
+.about-page a:focus-visible{outline:3px solid var(--acc);outline-offset:4px}
+
+@media(max-width:600px){
+ .project-document .about-page{padding-top:18px}
+ .about-page .about-intro{grid-template-columns:minmax(0,1fr) 80px;gap:18px;margin-bottom:24px}
+ .about-page .about-intro-copy{display:contents}
+ .about-page .about-intro-copy>.eyebrow,.about-page .about-intro-copy>h1{grid-column:1}
+ .project-document .about-page .about-intro-copy>h1{font-size:30px;margin:0}
+ .about-page .about-portrait{width:80px;grid-column:2;grid-row:1 / 3}
+ .project-document .about-page .about-lead{grid-column:1 / -1;font-size:18px}
+}
+@media(max-width:360px){
+ .about-page .about-intro{grid-template-columns:minmax(0,1fr) 64px;gap:14px}
+ .about-page .about-portrait{width:64px}
+ .project-document .about-page .about-intro-copy>h1{font-size:27px;overflow-wrap:anywhere}
+}
