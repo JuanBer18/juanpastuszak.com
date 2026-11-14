@@ -52,13 +52,19 @@
 .bento-home .award-nasa p .award-word{color:var(--award-text);text-decoration:underline;text-decoration-color:var(--award-accent);text-underline-offset:3px}
 .bento-home.portrait-integrated .poster-opening{grid-template-columns:minmax(0,1fr) minmax(320px,430px)}
 .bento-home.portrait-integrated .poster-profile{position:relative;display:flex}
-.bento-home.portrait-integrated .poster-profile .poster-portrait{position:absolute;right:26px;top:26px;width:104px;display:block;margin:0;border-radius:13px;background:transparent;align-self:auto}
-.bento-home.portrait-integrated .poster-profile .poster-portrait img{display:block;width:100%;height:auto}
+.bento-home.portrait-integrated .poster-profile .poster-portrait{position:relative;inset:auto;width:280px;height:168px;display:block;margin:0;border-radius:14px;background:#e8e9e4;align-self:center;flex-shrink:0;overflow:hidden}
+/* Crop the supplied 1200 by 1600 photograph to x=0, y=420, width=1200, height=720. */
+.bento-home.portrait-integrated .poster-profile .poster-portrait img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 47.727273%;mask-image:none}
 .bento-home.portrait-integrated .poster-profile>.eyebrow,.bento-home.portrait-integrated .poster-profile h1{max-width:calc(100% - 128px)}
-.bento-home.portrait-integrated .identity-header{display:grid;grid-template-columns:minmax(0,1fr) 104px;column-gap:22px;row-gap:10px;align-items:start;margin-bottom:14px}
+.bento-home.portrait-integrated .identity-header{display:grid;grid-template-columns:minmax(0,1fr) 280px;column-gap:24px;row-gap:10px;align-items:center;margin-bottom:20px}
 .bento-home.portrait-integrated .identity-header>.eyebrow{grid-column:1;grid-row:1;max-width:none}
 .bento-home.portrait-integrated .identity-header>h1{grid-column:1;grid-row:2;max-width:none;margin:0;align-self:start}
-.bento-home.portrait-integrated .identity-header>.poster-portrait{position:static;grid-column:2;grid-row:1/3;justify-self:end}
+.bento-home.portrait-integrated .identity-header>.poster-portrait{grid-column:2;grid-row:1/3;justify-self:end}
+@media(min-width:1051px) and (max-width:1240px){
+ .bento-home.portrait-integrated .identity-header{grid-template-columns:minmax(0,1fr) 220px;column-gap:18px}
+ .bento-home.portrait-integrated .identity-header>.poster-portrait{width:220px;height:132px}
+ .bento-home.portrait-integrated .identity-header>h1{font-size:40px}
+}
 @media(max-width:1050px){
  .bento-home .opening-awards{grid-template-columns:1.12fr 1fr;grid-template-rows:1fr}
  .bento-home.portrait-integrated .poster-opening{grid-template-columns:minmax(0,1fr)}
@@ -69,22 +75,13 @@
  .bento-home .opening-awards .award-royal h2{font-size:28px}
  .bento-home .opening-awards .award-scholarship h2{font-size:24px}
  .bento-home.portrait-integrated .poster-profile{padding:24px 22px;border-radius:18px}
- .bento-home.portrait-integrated .poster-profile .poster-portrait{width:76px;right:22px;top:24px;border-radius:10px}
+ .bento-home.portrait-integrated .poster-profile .poster-portrait{width:100%;height:auto;aspect-ratio:5/3;border-radius:12px;margin-top:8px}
  .bento-home.portrait-integrated .poster-profile>.eyebrow{max-width:calc(100% - 94px);font-size:10px;letter-spacing:.04em;padding:0}
  .bento-home.portrait-integrated .poster-profile h1{max-width:calc(100% - 94px);font-size:30px;margin:12px 0 14px;align-self:auto}
  .bento-home.portrait-integrated .poster-profile .line,.bento-home.portrait-integrated .poster-profile .bio{margin:0 0 10px}
  .bento-home.portrait-integrated .poster-profile .line{font-size:15px}
  .bento-home.portrait-integrated .poster-profile .actions{padding-top:6px}
- .bento-home.portrait-integrated .identity-header{grid-template-columns:minmax(0,1fr) 76px;column-gap:16px;row-gap:8px}
- .bento-home.portrait-integrated .identity-header>h1{max-width:none;margin:0;grid-column:1;grid-row:2}
-}
-
-/* Chosen circular portrait, with a continuous neutral background. */
-.bento-home.portrait-integrated:not([data-portrait-option]) .identity-header{grid-template-columns:minmax(0,1fr) 128px;align-items:center}
-.bento-home.portrait-integrated:not([data-portrait-option]) .identity-header>.poster-portrait{width:128px;height:128px;border-radius:50%;overflow:hidden;background:#f6f6f6;border:0;align-self:center;display:grid;place-items:center}
-.bento-home.portrait-integrated:not([data-portrait-option]) .poster-portrait img{width:auto;height:128px;max-width:none;object-fit:contain;mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent)}
-@media(max-width:620px){
- .bento-home.portrait-integrated:not([data-portrait-option]) .identity-header{grid-template-columns:minmax(0,1fr) 90px}
- .bento-home.portrait-integrated:not([data-portrait-option]) .identity-header>.poster-portrait{width:90px;height:90px}
- .bento-home.portrait-integrated:not([data-portrait-option]) .poster-portrait img{height:90px}
+ .bento-home.portrait-integrated .identity-header{grid-template-columns:minmax(0,1fr);row-gap:8px;margin-bottom:16px}
+ .bento-home.portrait-integrated .identity-header>h1{max-width:none;margin:0;grid-column:1;grid-row:2;font-size:36px}
+ .bento-home.portrait-integrated .identity-header>.poster-portrait{grid-column:1;grid-row:3}
 }
