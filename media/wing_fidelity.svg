@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="diagram" viewBox="0 0 760 400" role="img" aria-label="Analysis plan in three lanes. Aerodynamics: OpenVSP and VSPAERO, then XFOIL, then CFD. Structures: thin-walled bending and shear-flow analysis, then Abaqus finite elements. Dynamics and control: MATLAB and Simulink, then Gazebo with PX4 software in the loop, then the Pixhawk in flight."><style>.diagram text{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#1d1a16}.diagram .mute{fill:#6b6357}</style>
+      <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b6357"/></marker></defs>
+      <text x="20" y="28" font-size="12" class="mute">Fast, used inside the optimiser</text>
+      <text x="740" y="28" font-size="12" class="mute" text-anchor="end">Slower, used to check the chosen design</text>
+      <line x1="215" y1="22" x2="460" y2="22" stroke="#d3d8d2" stroke-width="1.5" marker-end="url(#ar2)"/>
+      <g font-size="13" font-weight="600">
+        <text x="20" y="78">Aerodynamics</text>
+        <text x="20" y="188">Structures</text>
+        <text x="20" y="298">Dynamics and</text><text x="20" y="315">control</text>
+      </g>
+      <g stroke="#d3d8d2" stroke-width="1.2">
+        <rect x="150" y="50" width="170" height="60" rx="10" fill="#d6e6ea"/>
+        <rect x="360" y="50" width="170" height="60" rx="10" fill="#fbfcfa"/>
+        <rect x="570" y="50" width="170" height="60" rx="10" fill="#fbfcfa"/>
+        <rect x="150" y="160" width="275" height="60" rx="10" fill="#d6e6ea"/>
+        <rect x="465" y="160" width="275" height="60" rx="10" fill="#fbfcfa"/>
+        <rect x="150" y="270" width="170" height="60" rx="10" fill="#d6e6ea"/>
+        <rect x="360" y="270" width="170" height="60" rx="10" fill="#fbfcfa"/>
+        <rect x="570" y="270" width="170" height="60" rx="10" fill="#fbfcfa"/>
+      </g>
+      <g text-anchor="middle">
+        <text x="235" y="77" font-size="14" font-weight="600">OpenVSP / VSPAERO</text><text x="235" y="96" font-size="11.5" class="mute">whole-aircraft loads, derivatives</text>
+        <text x="445" y="77" font-size="14" font-weight="600">XFOIL</text><text x="445" y="96" font-size="11.5" class="mute">section drag, stall, aerofoils</text>
+        <text x="655" y="77" font-size="14" font-weight="600">CFD</text><text x="655" y="96" font-size="11.5" class="mute">body blend, nacelle, check</text>
+        <text x="287" y="187" font-size="14" font-weight="600">Thin-walled section theory</text><text x="287" y="206" font-size="11.5" class="mute">bending stress, shear flow, torsion</text>
+        <text x="602" y="187" font-size="14" font-weight="600">Abaqus FEA</text><text x="602" y="206" font-size="11.5" class="mute">printed skin, grid, joints, buckling</text>
+        <text x="235" y="297" font-size="14" font-weight="600">MATLAB / Simulink</text><text x="235" y="316" font-size="11.5" class="mute">model, control-law design</text>
+        <text x="445" y="297" font-size="14" font-weight="600">Gazebo + PX4 SITL</text><text x="445" y="316" font-size="11.5" class="mute">simulated flights, camera</text>
+        <text x="655" y="297" font-size="14" font-weight="600">Pixhawk in flight</text><text x="655" y="316" font-size="11.5" class="mute">logs, identification</text>
+      </g>
+      <g stroke="#6b6357" stroke-width="1.6" fill="none">
+        <path d="M320 80 H356" marker-end="url(#ar2)"/><path d="M530 80 H566" marker-end="url(#ar2)"/>
+        <path d="M425 190 H461" marker-end="url(#ar2)"/>
+        <path d="M320 300 H356" marker-end="url(#ar2)"/><path d="M530 300 H566" marker-end="url(#ar2)"/>
+        <path d="M235 110 V156" stroke-dasharray="4 4" marker-end="url(#ar2)"/>
+        <path d="M200 110 C120 180 120 230 196 266" stroke-dasharray="4 4" marker-end="url(#ar2)"/>
+      </g>
+      <text x="245" y="140" font-size="11.5" class="mute">loads</text>
+      <text x="100" y="236" font-size="11.5" class="mute" text-anchor="middle">derivatives</text>
+      <text x="20" y="378" font-size="12" class="mute">Shaded: the fast level each optimisation uses. Planned for winter 2026 to 2027.</text>
+    </svg>

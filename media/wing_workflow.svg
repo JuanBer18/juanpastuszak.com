@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="diagram" viewBox="0 0 760 400" role="img" aria-label="Tool workflow: mission and requirements set the design variables; geometry and feature rules, then the inner structure; analysis and checks feed an optimiser that iterates on the design variables; the chosen design becomes a parametric CAD model, is printed and flown, and flight data corrects the models."><style>.diagram text{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;fill:#1d1a16}.diagram .mute{fill:#6b6357}</style>
+      <defs><marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b6357"/></marker></defs>
+      <g stroke="#d3d8d2" stroke-width="1.2">
+        <rect x="20" y="30" width="210" height="64" rx="10" fill="#fbfcfa"/>
+        <rect x="275" y="30" width="210" height="64" rx="10" fill="#fbfcfa"/>
+        <rect x="530" y="30" width="210" height="64" rx="10" fill="#fbfcfa"/>
+        <rect x="20" y="170" width="210" height="64" rx="10" fill="#1f5a6b" stroke="#1f5a6b"/>
+        <rect x="275" y="170" width="210" height="64" rx="10" fill="#d6e6ea"/>
+        <rect x="530" y="170" width="210" height="64" rx="10" fill="#fbfcfa"/>
+        <rect x="20" y="310" width="210" height="64" rx="10" fill="#fbfcfa"/>
+        <rect x="275" y="310" width="210" height="64" rx="10" fill="#fbfcfa"/>
+        <rect x="530" y="310" width="210" height="64" rx="10" fill="#fbfcfa" stroke-dasharray="5 4"/>
+      </g>
+      <g text-anchor="middle">
+        <text x="125" y="58" font-size="14" font-weight="600">Mission and requirements</text>
+        <text x="125" y="78" font-size="11.5" class="mute">endurance, speed, payload</text>
+        <text x="380" y="58" font-size="14" font-weight="600">Design variables</text>
+        <text x="380" y="78" font-size="11.5" class="mute">planform, aerofoils, structure</text>
+        <text x="635" y="58" font-size="14" font-weight="600">Geometry and feature rules</text>
+        <text x="635" y="78" font-size="11.5" class="mute">joints, hinges, servos, bay</text>
+        <text x="125" y="198" font-size="14" font-weight="600" style="fill:#fff">Optimiser</text>
+        <text x="125" y="218" font-size="11.5" style="fill:#d6e6ea">objectives, constraints</text>
+        <text x="380" y="198" font-size="14" font-weight="600">Analysis and checks</text>
+        <text x="380" y="218" font-size="11.5" class="mute">mass, aero, loads, stability</text>
+        <text x="635" y="198" font-size="14" font-weight="600">Inner structure</text>
+        <text x="635" y="218" font-size="11.5" class="mute">generated in the space left</text>
+        <text x="125" y="338" font-size="14" font-weight="600">Chosen design</text>
+        <text x="125" y="358" font-size="11.5" class="mute">parametric CAD, build123d</text>
+        <text x="380" y="338" font-size="14" font-weight="600">Print and ground checks</text>
+        <text x="380" y="358" font-size="11.5" class="mute">mass, balance, controls</text>
+        <text x="635" y="338" font-size="14" font-weight="600">Flight tests</text>
+        <text x="635" y="358" font-size="11.5" class="mute">predicted against measured</text>
+      </g>
+      <g stroke="#6b6357" stroke-width="1.6" fill="none">
+        <path d="M230 62 H270" marker-end="url(#ar1)"/>
+        <path d="M485 62 H525" marker-end="url(#ar1)"/>
+        <path d="M635 94 V165" marker-end="url(#ar1)"/>
+        <path d="M530 202 H490" marker-end="url(#ar1)"/>
+        <path d="M275 202 H235" marker-end="url(#ar1)"/>
+        <path d="M125 170 V132 H380 V99" marker-end="url(#ar1)"/>
+        <path d="M125 234 V305" marker-end="url(#ar1)"/>
+        <path d="M230 342 H270" marker-end="url(#ar1)"/>
+        <path d="M485 342 H525" marker-end="url(#ar1)"/>
+        <path d="M635 310 V272 H380 V239" stroke-dasharray="5 4" marker-end="url(#ar1)"/>
+      </g>
+      <text x="252" y="124" font-size="11.5" class="mute" text-anchor="middle">iterate</text>
+      <text x="508" y="265" font-size="11.5" class="mute" text-anchor="middle">flight data corrects the models</text>
+    </svg>

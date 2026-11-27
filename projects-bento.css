@@ -167,3 +167,13 @@
 
 .project-document .project-code{margin-top:10px;font-size:14px}
 .project-document .project-code a{color:var(--acc);text-underline-offset:3px}
+
+/* Flying-wing page (27 November 2026): inline SVG diagrams and the three highlight boxes under the opening. */
+.project-document .diagram{width:100%;height:auto;display:block}
+.project-document .diagram text{font-family:var(--sans);fill:var(--ink)}
+.project-document .diagram .mute{fill:var(--mute)}
+.project-document .why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0 8px}
+.project-document .why div{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.project-document .why b{display:block;font:600 17px/1.25 var(--serif);color:var(--ink);margin-bottom:6px}
+.project-document .why span{display:block;font:14.5px/1.5 var(--sans);color:var(--mute)}
+@media (max-width:800px){.project-document .why{grid-template-columns:1fr}}
